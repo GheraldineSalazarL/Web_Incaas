@@ -1,0 +1,225 @@
+body{
+    .Index{
+        .init{
+            background-image: url(../imag/wave.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            .initf{
+                .A{  
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    h1{
+                        font-family: $titulos;
+                        color: $blanco;
+                        margin:auto;
+		                display:block;
+                        text-align: center;
+                    }
+                    img{
+                        width: 380px;
+                        margin:auto;
+		                display:block;
+                    }
+                }
+                .B{
+                    width: 400px;
+                    margin: 20px 0 20px 0;
+                    align-self: center;
+                    .form{
+                        font-size: 1rem;
+                        border: $azul solid;
+                        border-radius: 10px;
+                        padding: 15px;
+                        box-shadow: 7px 7px 10px #c6c6c6;
+                        background-color: $blanco;
+                        .titulof{
+                            font-family: $titulos;
+                            text-align: center;
+                            color: $azul;
+                        }
+                        form{
+                            .controls{
+                                width: 100%;
+                                padding: 5px;
+                                border: 1px solid $azul;
+                                border-radius: 4px;
+                                margin-bottom: 5px;
+                                font-family: $letras;
+                               
+                            }
+                            .pf{
+                                a{
+                                    color: $azul;
+                                    text-decoration: none;
+                                    &:hover{
+                                        color: $verde;
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+                            .extboton{
+                                width: 100%;
+                                margin: auto;
+                                display: flex;
+                                justify-content: center;
+                                .boton{
+                                    background-color: $verde;
+                                    border: none;
+                                    padding: 10px;
+                                    color: white;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    border-radius: 4px;
+                                    &:hover{
+                                        background-color: $azul;
+                                        color: white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .C{
+            font-family: $titulos;
+            text-align: center;
+            color: $azul;
+            justify-content: center;
+            padding: 50px 0px 50px 0px;
+            h2{
+                padding: 15px 0px 15px 0px;
+            }
+            img{
+                width: 80%;
+            }
+
+        }
+        .D{
+            h2{
+                font-family: $titulos;
+                color: $azul;
+                padding-top: 50px;
+                text-align: center;
+            }
+        }
+        .E, .F, .G{
+            margin-top: 40px;
+            justify-content: center;
+            align-items: center;
+            img{
+                border: solid white;
+                border-radius: 8%;
+            }
+            .E1B, .F2B, .G3B{
+                display: flex;
+                flex-direction: column;
+                h2{
+                    font-family: $titulos;
+                    color: $azul;
+                    padding: 15px 0px 15px 0px;
+                }
+            } 
+        }
+        .H{
+            margin: 50px 0px 50px 0px;
+            h2{
+                font-family: $titulos;
+                color: $azul;
+                padding-bottom: 20px;
+                text-align: center;
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width:920px){
+    .carousel1{
+        .cards-wrapper{
+            display: flex;
+            justify-content: center;
+            .card{
+                margin: 0 .5em;
+                width: 300px;               
+                &:hover{
+                    box-shadow: 7px 7px 10px #c6c6c6;
+                }
+                .image-wrapper{
+                    margin: 0 auto;
+                    img{
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .carousel2{
+        display: none;
+    }
+    .carousel3{
+        display: none;
+    }
+}
+@media screen and (min-width:576px) and (max-width:920px){
+    .carousel1{
+        display: none;
+    }
+    .carousel2{
+        .cards-wrapper{
+            display: flex;
+            justify-content: center;
+            .card{
+                margin: 0 .5em;
+                width: 50%;               
+                &:hover{
+                    box-shadow: 7px 7px 10px #c6c6c6;
+                }
+                .image-wrapper{
+                    margin: 0 auto;
+                    img{
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .carousel3{
+        display: none;
+    }
+}
+@media screen and (max-width:576px){
+    .carousel1{
+        display: none;
+    }
+    .carousel2{
+        display: none;
+    }
+    .carousel3{
+        .cards-wrapper{
+            display: flex;
+            justify-content: center;
+            .card{
+                margin: 0 .5em;
+                width: 60%;               
+                &:hover{
+                    box-shadow: 7px 7px 10px #c6c6c6;
+                }
+                .image-wrapper{
+                    margin: 0 auto;
+                    height: 60vw;;
+                    img{
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+

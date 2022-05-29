@@ -1,0 +1,307 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body .Index .init {
+  background-image: url(../imag/wave.svg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+  body .Index .init .initf .A {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center; }
+    body .Index .init .initf .A h1 {
+      font-family: "Ubuntu", sans-serif;
+      color: #ffffff;
+      margin: auto;
+      display: block;
+      text-align: center; }
+    body .Index .init .initf .A img {
+      width: 380px;
+      margin: auto;
+      display: block; }
+  body .Index .init .initf .B {
+    width: 400px;
+    margin: 20px 0 20px 0;
+    align-self: center; }
+    body .Index .init .initf .B .form {
+      font-size: 1rem;
+      border: #083B86 solid;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 7px 7px 10px #c6c6c6;
+      background-color: #ffffff; }
+      body .Index .init .initf .B .form .titulof {
+        font-family: "Ubuntu", sans-serif;
+        text-align: center;
+        color: #083B86; }
+      body .Index .init .initf .B .form form .controls {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #083B86;
+        border-radius: 4px;
+        margin-bottom: 5px;
+        font-family: "Josefin Sans", sans-serif; }
+      body .Index .init .initf .B .form form .pf a {
+        color: #083B86;
+        text-decoration: none; }
+        body .Index .init .initf .B .form form .pf a:hover {
+          color: #6AB528;
+          text-decoration: underline; }
+      body .Index .init .initf .B .form form .extboton {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center; }
+        body .Index .init .initf .B .form form .extboton .boton {
+          background-color: #6AB528;
+          border: none;
+          padding: 10px;
+          color: white;
+          margin-left: auto;
+          margin-right: auto;
+          border-radius: 4px; }
+          body .Index .init .initf .B .form form .extboton .boton:hover {
+            background-color: #083B86;
+            color: white; }
+
+body .Index .C {
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+  color: #083B86;
+  justify-content: center;
+  padding: 50px 0px 50px 0px; }
+  body .Index .C h2 {
+    padding: 15px 0px 15px 0px; }
+  body .Index .C img {
+    width: 80%; }
+
+body .Index .D h2 {
+  font-family: "Ubuntu", sans-serif;
+  color: #083B86;
+  padding-top: 50px;
+  text-align: center; }
+
+body .Index .E, body .Index .F, body .Index .G {
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center; }
+  body .Index .E img, body .Index .F img, body .Index .G img {
+    border: solid white;
+    border-radius: 8%; }
+  body .Index .E .E1B, body .Index .E .F2B, body .Index .E .G3B, body .Index .F .E1B, body .Index .F .F2B, body .Index .F .G3B, body .Index .G .E1B, body .Index .G .F2B, body .Index .G .G3B {
+    display: flex;
+    flex-direction: column; }
+    body .Index .E .E1B h2, body .Index .E .F2B h2, body .Index .E .G3B h2, body .Index .F .E1B h2, body .Index .F .F2B h2, body .Index .F .G3B h2, body .Index .G .E1B h2, body .Index .G .F2B h2, body .Index .G .G3B h2 {
+      font-family: "Ubuntu", sans-serif;
+      color: #083B86;
+      padding: 15px 0px 15px 0px; }
+
+body .Index .H {
+  margin: 50px 0px 50px 0px; }
+  body .Index .H h2 {
+    font-family: "Ubuntu", sans-serif;
+    color: #083B86;
+    padding-bottom: 20px;
+    text-align: center; }
+
+@media screen and (min-width: 920px) {
+  .carousel1 .cards-wrapper {
+    display: flex;
+    justify-content: center; }
+    .carousel1 .cards-wrapper .card {
+      margin: 0 .5em;
+      width: 300px; }
+      .carousel1 .cards-wrapper .card:hover {
+        box-shadow: 7px 7px 10px #c6c6c6; }
+      .carousel1 .cards-wrapper .card .image-wrapper {
+        margin: 0 auto; }
+        .carousel1 .cards-wrapper .card .image-wrapper img {
+          max-width: 100%;
+          max-height: 100%; }
+  .carousel2 {
+    display: none; }
+  .carousel3 {
+    display: none; } }
+
+@media screen and (min-width: 576px) and (max-width: 920px) {
+  .carousel1 {
+    display: none; }
+  .carousel2 .cards-wrapper {
+    display: flex;
+    justify-content: center; }
+    .carousel2 .cards-wrapper .card {
+      margin: 0 .5em;
+      width: 50%; }
+      .carousel2 .cards-wrapper .card:hover {
+        box-shadow: 7px 7px 10px #c6c6c6; }
+      .carousel2 .cards-wrapper .card .image-wrapper {
+        margin: 0 auto; }
+        .carousel2 .cards-wrapper .card .image-wrapper img {
+          max-width: 100%;
+          max-height: 100%; }
+  .carousel3 {
+    display: none; } }
+
+@media screen and (max-width: 576px) {
+  .carousel1 {
+    display: none; }
+  .carousel2 {
+    display: none; }
+  .carousel3 .cards-wrapper {
+    display: flex;
+    justify-content: center; }
+    .carousel3 .cards-wrapper .card {
+      margin: 0 .5em;
+      width: 60%; }
+      .carousel3 .cards-wrapper .card:hover {
+        box-shadow: 7px 7px 10px #c6c6c6; }
+      .carousel3 .cards-wrapper .card .image-wrapper {
+        margin: 0 auto;
+        height: 60vw; }
+        .carousel3 .cards-wrapper .card .image-wrapper img {
+          max-width: 100%;
+          max-height: 100%; } }
+
+.imagenes, body .tecnicos .card .imagens, body .cursos .card .imagens, body .seminarios .card .imagens, body .tecnicos .card .imagena, body .cursos .card .imagena, body .seminarios .card .imagena, body .tecnicos .card .imagenin1, body .cursos .card .imagenin1, body .seminarios .card .imagenin1, body .tecnicos .card .imagenin2, body .cursos .card .imagenin2, body .seminarios .card .imagenin2, body .tecnicos .card .imagenp, body .cursos .card .imagenp, body .seminarios .card .imagenp, body .tecnicos .card .imagenprog, body .cursos .card .imagenprog, body .seminarios .card .imagenprog, body .tecnicos .card .imageneb, body .cursos .card .imageneb, body .seminarios .card .imageneb, body .tecnicos .card .imageneint, body .cursos .card .imageneint, body .seminarios .card .imageneint, body .tecnicos .card .imagenelc, body .cursos .card .imagenelc, body .seminarios .card .imagenelc, body .tecnicos .card .imagenrm, body .cursos .card .imagenrm, body .seminarios .card .imagenrm, body .tecnicos .card .imagenps, body .cursos .card .imagenps, body .seminarios .card .imagenps {
+  border-radius: 3px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: auto; }
+
+body .tecnicos, body .cursos, body .seminarios {
+  padding: 50px 0px 30px 0px; }
+  body .tecnicos h1, body .cursos h1, body .seminarios h1 {
+    font-family: "Ubuntu", sans-serif;
+    color: #083B86;
+    text-align: center; }
+  body .tecnicos .tec, body .cursos .tec, body .seminarios .tec {
+    justify-content: center;
+    align-items: center; }
+    body .tecnicos .tec img, body .cursos .tec img, body .seminarios .tec img {
+      width: 50%;
+      padding: 15px; }
+  body .tecnicos .card, body .cursos .card, body .seminarios .card {
+    border: 0;
+    margin: 20px 0px 20px 0px; }
+    body .tecnicos .card .imagens, body .cursos .card .imagens, body .seminarios .card .imagens {
+      background-image: url(../imag/tecsistemas.jpg); }
+    body .tecnicos .card .imagena, body .cursos .card .imagena, body .seminarios .card .imagena {
+      background-image: url(../imag/tecadministracion.jpg); }
+    body .tecnicos .card .imagenin1, body .cursos .card .imagenin1, body .seminarios .card .imagenin1 {
+      background-image: url(../imag/Cingles12.jpg); }
+    body .tecnicos .card .imagenin2, body .cursos .card .imagenin2, body .seminarios .card .imagenin2 {
+      background-image: url(../imag/Cingles22.jpg); }
+    body .tecnicos .card .imagenp, body .cursos .card .imagenp, body .seminarios .card .imagenp {
+      background-image: url(../imag/Cportugues2.jpg); }
+    body .tecnicos .card .imagenprog, body .cursos .card .imagenprog, body .seminarios .card .imagenprog {
+      background-image: url(../imag/CProgramacionniños2.jpg); }
+    body .tecnicos .card .imageneb, body .cursos .card .imageneb, body .seminarios .card .imageneb {
+      background-image: url(../imag/Cexcelb2.jpg); }
+    body .tecnicos .card .imageneint, body .cursos .card .imageneint, body .seminarios .card .imageneint {
+      background-image: url(../imag/Cexceli2.jpg); }
+    body .tecnicos .card .imagenelc, body .cursos .card .imagenelc, body .seminarios .card .imagenelc {
+      background-image: url(../imag/Clectura2.jpg); }
+    body .tecnicos .card .imagenrm, body .cursos .card .imagenrm, body .seminarios .card .imagenrm {
+      background-image: url(../imag/Crazonamiento2.jpg); }
+    body .tecnicos .card .imagenps, body .cursos .card .imagenps, body .seminarios .card .imagenps {
+      background-image: url(../imag/Cpruebas2.jpg); }
+    body .tecnicos .card .imagensem, body .cursos .card .imagensem, body .seminarios .card .imagensem {
+      width: 100%; }
+    body .tecnicos .card .card-body, body .cursos .card .card-body, body .seminarios .card .card-body {
+      border: 3px solid rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+      padding: 10px;
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+      height: 100%; }
+      body .tecnicos .card .card-body .card-body-int, body .cursos .card .card-body .card-body-int, body .seminarios .card .card-body .card-body-int {
+        background-color: #D0D2D4;
+        padding: 20px;
+        border-radius: 4px; }
+        body .tecnicos .card .card-body .card-body-int h5, body .cursos .card .card-body .card-body-int h5, body .seminarios .card .card-body .card-body-int h5 {
+          font-family: "Ubuntu", sans-serif;
+          color: #083B86; }
+        body .tecnicos .card .card-body .card-body-int .btn, body .cursos .card .card-body .card-body-int .btn, body .seminarios .card .card-body .card-body-int .btn {
+          background-color: #6AB528;
+          border: #6AB528; }
+          body .tecnicos .card .card-body .card-body-int .btn:hover, body .cursos .card .card-body .card-body-int .btn:hover, body .seminarios .card .card-body .card-body-int .btn:hover {
+            background-color: #083B86;
+            border: #083B86; }
+
+body .matriculas {
+  margin: auto;
+  padding: 30px; }
+  body .matriculas .text {
+    margin: auto; }
+    body .matriculas .text h1 {
+      font-family: "Ubuntu", sans-serif;
+      color: #083B86;
+      text-align: center;
+      padding-bottom: 15px; }
+    body .matriculas .text img {
+      width: auto; }
+  body .matriculas .vinc .card form {
+    width: 80%; }
+    body .matriculas .vinc .card form .form-check .textc a {
+      text-decoration: none;
+      color: #ffffff; }
+      body .matriculas .vinc .card form .form-check .textc a:hover {
+        color: #6AB528;
+        text-decoration: none; }
+    body .matriculas .vinc .card form .boton {
+      width: 100%; }
+      body .matriculas .vinc .card form .boton button {
+        background-color: #6AB528; }
+        body .matriculas .vinc .card form .boton button:hover {
+          background-color: #083B86;
+          color: #ffffff; }
+
+body {
+  color: black;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.1rem; }
+  body header nav {
+    background-color: #083B86; }
+    body header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center; }
+      body header nav ul li {
+        margin-right: 2px; }
+        body header nav ul li a {
+          position: relative;
+          display: block;
+          padding: 5px; }
+          body header nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #6AB528;
+            z-index: 1;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease-in-out; }
+          body header nav ul li a:hover::before {
+            transform: scaleX(1); }
+  body header .sticky {
+    padding: 5px 90px;
+    background-color: #0c1c34; }
+  body header .scroll {
+    width: 150px; }
+  body header .inicio {
+    background-color: #083B86;
+    height: 105px; }
+  body header .inicio2 {
+    height: 105px; }
+  body .wpp {
+    position: fixed;
+    line-height: 55px;
+    bottom: 20px;
+    right: 30px; }

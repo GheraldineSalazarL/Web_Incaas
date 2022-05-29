@@ -1,0 +1,48 @@
+body{
+    .matriculas{
+        margin: auto;
+        padding: 30px;
+        .text{
+            margin: auto;
+            h1{
+                font-family: $titulos;
+                color: $azul;
+                text-align: center;
+                padding-bottom: 15px;
+            }
+            img{
+                width: auto;
+            }
+        }
+        .vinc{
+            .card{
+                form{
+                    width: 80%;
+                    .form-check{
+                        .textc{
+                            a{
+                                text-decoration: none;
+                                color: $blanco;
+                                    &:hover{
+                                        color: $verde;
+                                        text-decoration: none;
+                                    }
+                            }
+                        }
+                    }
+                    .boton{
+                        width: 100%;
+                        button{
+                            background-color: $verde;
+                            &:hover{
+                                background-color: $azul;
+                                color: $blanco;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}

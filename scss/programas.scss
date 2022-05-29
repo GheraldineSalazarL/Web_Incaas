@@ -1,0 +1,102 @@
+.imagenes{
+    border-radius: 3px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: auto;
+}
+
+body{
+    .tecnicos, .cursos, .seminarios{
+        padding: 50px 0px 30px 0px;
+        h1{
+            font-family: $titulos;
+            color: $azul;
+            text-align: center;
+        }
+        .tec{
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 50%;
+                padding: 15px;
+            }
+        }
+        .card{
+            border: 0;
+            margin: 20px 0px 20px 0px;
+        
+            .imagens{
+                background-image: url(../imag/tecsistemas.jpg);
+                @extend .imagenes;
+            }
+            .imagena{
+                background-image: url(../imag/tecadministracion.jpg);
+                @extend .imagenes;
+            }
+            .imagenin1{
+                background-image: url(../imag/Cingles12.jpg);
+                @extend .imagenes;
+            }
+            .imagenin2{
+                background-image: url(../imag/Cingles22.jpg);
+                @extend .imagenes;
+            }
+            .imagenp{
+                background-image: url(../imag/Cportugues2.jpg);
+                @extend .imagenes;
+            }
+            .imagenprog{
+                background-image: url(../imag/CProgramacionniños2.jpg);
+                @extend .imagenes;
+            }
+            .imageneb{
+                background-image: url(../imag/Cexcelb2.jpg);
+                @extend .imagenes;
+            }
+            .imageneint{
+                background-image: url(../imag/Cexceli2.jpg);
+                @extend .imagenes;
+            }
+            .imagenelc{
+                background-image: url(../imag/Clectura2.jpg);
+                @extend .imagenes;
+            }
+            .imagenrm{
+                background-image: url(../imag/Crazonamiento2.jpg);
+                @extend .imagenes;
+            }
+            .imagenps{
+                background-image: url(../imag/Cpruebas2.jpg);
+                @extend .imagenes;
+            }
+            .imagensem{
+                width: 100%;
+            }
+            .card-body{
+                border: 3px solid rgba(0, 0, 0, 0.5);
+                border-radius: 4px;
+                padding: 10px;
+                box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+                height: 100%;
+                .card-body-int{
+                    background-color: $gris;
+                    padding: 20px;
+                    border-radius: 4px;
+                    h5{
+                        font-family: $titulos;
+                        color: $azul;
+                    }
+                    .btn{
+                        background-color: $verde;
+                        border: $verde;
+                        &:hover{
+                            background-color: $azul;
+                            border: $azul;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
