@@ -260,6 +260,43 @@ body .matriculas {
           background-color: #083B86;
           color: #ffffff; }
 
+body .contactos {
+  padding: 50px 0px 50px 0px; }
+  body .contactos .barra .card ul a {
+    text-decoration: none; }
+    body .contactos .barra .card ul a:hover {
+      text-decoration: none; }
+  body .contactos .info {
+    padding-left: 40px; }
+    body .contactos .info .encontrarnos {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap; }
+      body .contactos .info .encontrarnos h3 {
+        font-family: "Ubuntu", sans-serif;
+        color: #083B86;
+        padding-top: 20px; }
+      body .contactos .info .encontrarnos .lugar {
+        display: flex;
+        flex-direction: row;
+        margin: auto; }
+        body .contactos .info .encontrarnos .lugar iframe {
+          padding: 10px; }
+      body .contactos .info .encontrarnos .comunicacion {
+        padding-left: 30px;
+        padding-top: 10px; }
+      body .contactos .info .encontrarnos .escribir form {
+        padding-top: 10px;
+        padding-left: 30px;
+        width: 70%; }
+        body .contactos .info .encontrarnos .escribir form .boton {
+          width: 100%; }
+          body .contactos .info .encontrarnos .escribir form .boton button {
+            background-color: #6AB528; }
+            body .contactos .info .encontrarnos .escribir form .boton button:hover {
+              background-color: #083B86;
+              color: #ffffff; }
+
 body {
   color: black;
   font-family: "Josefin Sans", sans-serif;
@@ -300,6 +337,20 @@ body {
     height: 105px; }
   body header .inicio2 {
     height: 105px; }
+  body header .inicio3 {
+    height: 500px;
+    background-image: url(../imag/init_contactos.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end; }
+    body header .inicio3 h1 {
+      font-family: "Ubuntu", sans-serif;
+      padding-left: 50px;
+      padding-bottom: 30px; }
   body .wpp {
     position: fixed;
     line-height: 55px;

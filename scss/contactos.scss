@@ -1,0 +1,62 @@
+body{
+    .contactos{
+        padding: 50px 0px 50px 0px;
+        .barra{
+            
+            .card{
+              
+                ul{
+                    a{
+                        text-decoration: none;
+                            &:hover{
+                                text-decoration: none;
+                            }
+                    }
+                }
+            }
+            
+        }
+        .info{
+            padding-left: 40px;
+            .encontrarnos{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                h3{
+                    font-family: $titulos;
+                    color: $azul;
+                    padding-top: 20px;
+                }
+                .lugar{
+                    display: flex;
+                    flex-direction: row;
+                    margin: auto;
+                    iframe{
+                        padding: 10px;
+                    }
+                }
+                .comunicacion{
+                    padding-left: 30px;
+                    padding-top: 10px;
+                }
+                .escribir{
+                    form{
+                        padding-top: 10px;
+                        padding-left: 30px;
+                        width: 70%;
+                        .boton{
+                            width: 100%;
+                            button{
+                                background-color: $verde;
+                                &:hover{
+                                    background-color: $azul;
+                                    color: $blanco;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
