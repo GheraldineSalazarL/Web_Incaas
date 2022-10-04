@@ -12,20 +12,16 @@ body .Index .init {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    align-items: center; }
+    align-items: center;
+    margin-bottom: 20px; }
     body .Index .init .initf .A h1 {
       font-family: "Ubuntu", sans-serif;
       color: #ffffff;
-      margin: auto;
       display: block;
       text-align: center; }
-    body .Index .init .initf .A img {
-      width: 380px;
-      margin: auto;
-      display: block; }
   body .Index .init .initf .B {
     width: 400px;
-    margin: 20px 0 20px 0;
+    margin: 0px 0 20px 0;
     align-self: center; }
     body .Index .init .initf .B .form {
       font-size: 1rem;
@@ -76,8 +72,6 @@ body .Index .C {
   padding: 50px 0px 50px 0px; }
   body .Index .C h2 {
     padding: 15px 0px 15px 0px; }
-  body .Index .C img {
-    width: 80%; }
 
 body .Index .D h2 {
   font-family: "Ubuntu", sans-serif;
@@ -164,7 +158,9 @@ body .Index .H {
         height: 60vw; }
         .carousel3 .cards-wrapper .card .image-wrapper img {
           max-width: 100%;
-          max-height: 100%; } }
+          max-height: 100%; }
+  .E, .F, .G {
+    margin: 0px 20px 0px 20px !important; } }
 
 .imagenes, body .tecnicos .card .imagens, body .cursos .card .imagens, body .seminarios .card .imagens, body .tecnicos .card .imagena, body .cursos .card .imagena, body .seminarios .card .imagena, body .tecnicos .card .imagenin1, body .cursos .card .imagenin1, body .seminarios .card .imagenin1, body .tecnicos .card .imagenin2, body .cursos .card .imagenin2, body .seminarios .card .imagenin2, body .tecnicos .card .imagenp, body .cursos .card .imagenp, body .seminarios .card .imagenp, body .tecnicos .card .imagenprog, body .cursos .card .imagenprog, body .seminarios .card .imagenprog, body .tecnicos .card .imageneb, body .cursos .card .imageneb, body .seminarios .card .imageneb, body .tecnicos .card .imageneint, body .cursos .card .imageneint, body .seminarios .card .imageneint, body .tecnicos .card .imagenelc, body .cursos .card .imagenelc, body .seminarios .card .imagenelc, body .tecnicos .card .imagenrm, body .cursos .card .imagenrm, body .seminarios .card .imagenrm, body .tecnicos .card .imagenps, body .cursos .card .imagenps, body .seminarios .card .imagenps {
   border-radius: 3px;
@@ -182,9 +178,6 @@ body .tecnicos, body .cursos, body .seminarios {
   body .tecnicos .tec, body .cursos .tec, body .seminarios .tec {
     justify-content: center;
     align-items: center; }
-    body .tecnicos .tec img, body .cursos .tec img, body .seminarios .tec img {
-      width: 50%;
-      padding: 15px; }
   body .tecnicos .card, body .cursos .card, body .seminarios .card {
     border: 0;
     margin: 20px 0px 20px 0px; }
@@ -232,6 +225,10 @@ body .tecnicos, body .cursos, body .seminarios {
             background-color: #083B86;
             border: #083B86; }
 
+@media screen and (max-width: 576px) {
+  body .tecnicos, body .cursos, body .seminarios {
+    padding: 0px 20px 0px 20px; } }
+
 body .matriculas {
   margin: auto;
   padding: 30px; }
@@ -266,36 +263,40 @@ body .contactos {
     text-decoration: none; }
     body .contactos .barra .card ul a:hover {
       text-decoration: none; }
-  body .contactos .info {
-    padding-left: 40px; }
-    body .contactos .info .encontrarnos {
+  body .contactos .info .encontrarnos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; }
+    body .contactos .info .encontrarnos h3 {
+      font-family: "Ubuntu", sans-serif;
+      color: #083B86;
+      padding-top: 20px; }
+    body .contactos .info .encontrarnos .lugar {
       display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap; }
-      body .contactos .info .encontrarnos h3 {
-        font-family: "Ubuntu", sans-serif;
-        color: #083B86;
-        padding-top: 20px; }
-      body .contactos .info .encontrarnos .lugar {
-        display: flex;
-        flex-direction: row;
-        margin: auto; }
-        body .contactos .info .encontrarnos .lugar iframe {
-          padding: 10px; }
-      body .contactos .info .encontrarnos .comunicacion {
-        padding-left: 30px;
-        padding-top: 10px; }
-      body .contactos .info .encontrarnos .escribir form {
-        padding-top: 10px;
-        padding-left: 30px;
-        width: 70%; }
-        body .contactos .info .encontrarnos .escribir form .boton {
-          width: 100%; }
-          body .contactos .info .encontrarnos .escribir form .boton button {
-            background-color: #6AB528; }
-            body .contactos .info .encontrarnos .escribir form .boton button:hover {
-              background-color: #083B86;
-              color: #ffffff; }
+      flex-direction: row;
+      margin: auto; }
+      body .contactos .info .encontrarnos .lugar iframe {
+        padding: 10px; }
+    body .contactos .info .encontrarnos .comunicacion, body .contactos .info .encontrarnos .escribir form {
+      padding-left: 30px;
+      padding-top: 10px; }
+    body .contactos .info .encontrarnos .escribir form {
+      width: 70%; }
+      body .contactos .info .encontrarnos .escribir form .boton {
+        width: 100%; }
+        body .contactos .info .encontrarnos .escribir form .boton button {
+          background-color: #6AB528; }
+          body .contactos .info .encontrarnos .escribir form .boton button:hover {
+            background-color: #083B86;
+            color: #ffffff; }
+
+@media screen and (max-width: 576px) {
+  body .contactos {
+    padding: 30px 30px 20px 30px; } }
+
+@media screen and (max-width: 767px) {
+  body .contactos .barra {
+    margin: auto !important; } }
 
 body {
   color: black;
@@ -328,10 +329,10 @@ body {
           body header nav ul li a:hover::before {
             transform: scaleX(1); }
   body header .sticky {
-    padding: 5px 90px;
+    padding: 5px;
     background-color: #0c1c34; }
   body header .scroll {
-    width: 150px; }
+    width: 180px; }
   body header .inicio {
     background-color: #083B86;
     height: 105px; }
@@ -343,6 +344,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    background-attachment: fixed;
     color: #ffffff;
     display: flex;
     justify-content: flex-start;
@@ -356,3 +358,6 @@ body {
     line-height: 55px;
     bottom: 20px;
     right: 30px; }
+  body .footer p a {
+    text-decoration: none;
+    color: #6c757D; }

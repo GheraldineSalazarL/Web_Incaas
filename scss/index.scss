@@ -10,22 +10,23 @@ body{
                     flex-direction: column;
                     flex-wrap: nowrap;
                     align-items: center;
+                    margin-bottom: 20px;
                     h1{
                         font-family: $titulos;
                         color: $blanco;
-                        margin:auto;
+                        // margin:auto;
 		                display:block;
                         text-align: center;
                     }
                     img{
-                        width: 380px;
-                        margin:auto;
-		                display:block;
+                        // width: 65%;
+                        // margin:auto;
+		                // display:block;
                     }
                 }
                 .B{
                     width: 400px;
-                    margin: 20px 0 20px 0;
+                    margin: 0px 0 20px 0;
                     align-self: center;
                     .form{
                         font-size: 1rem;
@@ -94,7 +95,7 @@ body{
                 padding: 15px 0px 15px 0px;
             }
             img{
-                width: 80%;
+                // width: 80%;
             }
 
         }
@@ -220,6 +221,9 @@ body{
                 }
             }
         }
+    }
+    .E, .F, .G{
+        margin: 0px 20px 0px 20px !important;
     }
 }
 

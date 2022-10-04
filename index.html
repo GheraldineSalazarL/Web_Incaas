@@ -14,6 +14,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/461bbe17d9.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="sweetalert2.all.min.js"></script>
         <title>INCAAS</title>
     </head>
 
@@ -21,8 +23,8 @@
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark " >
           <div class="container">
-            <a class="navbar-brand" href="index.html">
-              <img src="./imag/Logo.jpg" alt="INCAAS" width="280">
+            <a class="navbar-brand col-xl-3 col-lg-4 col-9" href="index.html">
+              <img src="./imag/Logo.jpg" alt="INCAAS" width="280" class="img-fluid">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -57,77 +59,87 @@
 
     <main class="Index">
         <div class="init">
-            <div class="initf container">
+            <div class="initf container-fluid">
                 <div class="row pt-3">
-                    <div class="A mx-auto col-lg-6">
-                        <h1 class="wow animate__animated animate__bounceInLeft">!Comienza a estudiar ahora!</h1>
-                        <img class="wow animate__animated animate__pulse" src="./imag/Estudia.png" alt="Estudiar">
+                    <div class="A mx-auto col-lg-7 col-md-5 col-sm-12 col-12 row">
+                        <h1 class="wow animate__animated animate__bounceInLeft col-lg-12">!Comienza a estudiar ahora!</h1>
+                        <img class="img-fluid wow animate__animated animate__pulse m-auto col-lg-7 col-md-12 col-sm-6 col-7" src="./imag/Estudia.png" alt="Estudiar">
                     </div>
-                    <div class="B mx-auto col-lg-4">
+                    <div class="B mx-auto ">
                         <section class="form wow animate__animated animate__pulse" >
                             <h4 class="titulof p-1">¿Quieres que te llamemos?</h4>
-                            <form action="">
-                                <input class="controls" type="text" placeholder="Ingrésa tu Nombre" name="nombre" required>
-                                <input class="controls" type="text" placeholder="Ingésa tu Apellido" name="apellido" required>
-                                <input class="controls" type="email" placeholder="Ingrésa tu Email" name="email" required>
-                                <input class="controls" type="tel" placeholder="Ingrésa tu Teléfono" name="telfono" required>
-                                <label for="fecha">Cuándo te llamamos?</label>
-                                <input class="controls" type="date" placeholder="¿Cuándo te llamamos?" name="fecha">
-                                <select class="controls" id="Programa" name="programa" id="">
-                                    <option value="seleccion">Selecciona el Programa</option>
-                                    <option value="ts">Técnico Laboral en Sistemas</option>
-                                    <option value="ta">Técnico Laboral en Asistencia Administrativa</option>
-                                    <option value="i1">Inglés 1</option>
-                                    <option value="i2">Inglés 2</option>
-                                    <option value="p">Portugues</option>
-                                    <option value="p">Programación para Niños</option>
-                                    <option value="eb">Excel Básico</option>
-                                    <option value="ei">Excel Intermedio con Énfasis en Tablas Dinámicas</option>
-                                    <option value="lc">Lectura Crítica</option>
-                                    <option value="rl">Razonamiento Lógico y Matemático</option>
-                                    <option value="ps">Pruebas Saber</option>
-                                    <option value="s">Seminarios</option>
+                            <form id="form">
+                                <input class="controls" type="text" placeholder="Ingrésa tu Nombre" name="nombre" id="nombre" required>
+                                <input class="controls" type="text" placeholder="Ingésa tu Apellido" name="apellido" id="apellido" required>
+                                <input class="controls" type="email" placeholder="Ingrésa tu Email" name="email" id="email" required>
+                                <input class="controls" type="tel" placeholder="Ingrésa tu Teléfono" name="telefono" id="telefono" required>
+                                <label for="horario">En qué horario te llamamos?</label>
+                                <select class="controls" name="horario" id="horario" required>
+                                    <option>Selecciona el horario</option>
+                                    <option value="8-12">8:00 am a 12:00 pm</option>
+                                    <option value="2-6">2:00 pm a 6:00 pm</option>
+                                    <option value="6-9">6:00 pm a 9:00 pm</option>
                                 </select>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                                <select class="controls" name="programa" id="programa" required>
+                                    <option>Selecciona el Programa</option>
+                                    <option value="Sistemas">Técnico Laboral en Sistemas</option>
+                                    <option value="As.Administrativa">Técnico Laboral en Asistencia Administrativa</option>
+                                    <option value="Ingles1">Inglés 1</option>
+                                    <option value="Ingles2">Inglés 2</option>
+                                    <option value="Portugues">Portugués</option>
+                                    <option value="Programación Niños">Programación para Niños</option>
+                                    <option value="ExcelBasico">Excel Básico</option>
+                                    <option value="ExcelIntermedio">Excel Intermedio con Énfasis en Tablas Dinámicas</option>
+                                    <option value="LecturaCritica">Lectura Crítica</option>
+                                    <option value="RazonamientoLogico">Razonamiento Lógico y Matemático</option>
+                                    <option value="PruebasSaber">Pruebas Saber</option>
+                                    <option value="Seminarios">Seminarios</option>
+                                </select>
+                                <!-- <div class="form-check form-switch" >
+                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked required>
                                     <label class="form-check-label" for="flexSwitchCheckChecked"><p class="pf">De acuerdo con el <label for="acepta"><a href="./tratamientodedatos.html" target="_blanc">tratamiento de datos</a></label></p></label>
-                                </div>
+                                </div> -->
                                 <section class="extboton">
-                                    <input class="boton" type="submit" value="Si, quiero que me llamen!">
+                                    <input class="boton" type="submit" id="button" value="Si, quiero que me llamen!">
                                 </section>
                             </form>
+                            <script type="text/javascript"
+                            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+                            <script type="text/javascript">
+                                emailjs.init('XPWk9mav5DBxoSlPR')
+                            </script>
+
                         </section>
                     </div>
                 </div>
             </div>
         </div> 
         
-        <div class="container">
-            <div class="C row">
-                <h2>Escóge la metodología que más te gusta y se adapte a tus necesidades</h2>
-                <img class="wow animate__animated animate__pulse" src="./imag/Programas.png" alt="Beneficios programas presenciales y virtuales">
+        <div class="container-fluid">
+            <div class="C row mx-2 col-12">
+                <h2 class="col-12">Escóge la metodología que más te gusta y se adapte a tus necesidades</h2>
+                <img class="wow animate__animated animate__pulse img-fluid col-11 col-xl-9" src="./imag/Programas.png" alt="Beneficios programas presenciales y virtuales">
             </div>
             
             <div class="D row">
                 <h2>¿Por qué estudiar en INCAAS?</h2>
             </div>
 
-            <div class="E row">
+            <div class="E row mx-5">
                 <img class="mx-auto col-md-6 col-lg-6 wow animate__animated animate__pulse" src="./imag/Refuerzo.jpg" alt="Refuerzo">
                 <section class="E1B mx-auto col-md-6 col-lg-6">
                     <h2> Sé el mejor</h2> 
                     <p>Para ser el mejor es importante que refuerces tus conocimientos y aprendas nuevos, todo el equipo de Incaas tiene por objetivo ayudarte a adquirir habilidades que elebarán tus calificiones, mejorará tu memoria, desarrollarás capacidades de resolución de problemas, desarrollarás aptitudes en un segundo idioma y hasta aumentará tu autoestima. Nuestro excelente equipo de trabajo nos hace altamente competitivos, brindando siempre la Calidad y Superación precisa para ti, que quieres buscar el más alto progreso.</p>
                 </section>
             </div>
-            
-            <div class="F row flex-row-reverse">
+            <div class="F row flex-row-reverse mx-5">
                 <img class="mx-auto col-md-6 col-lg-6 wow animate__animated animate__pulse" src="./imag/Laboral.jpg" alt="Mundo laboral">
                 <section class="F2B mx-auto col-md-6 col-lg-6">
                     <h2> Prepárate para el mundo laboral</h2> 
                     <p>¿Quieres entrar al mundo laboral? con Incaas podrás desarollar esos skills y aptitudes que toda empresa necesita capacitandote en uno de nuestros Técnicos Laborales o cursos los cuales son de muy alta calidad ya que pensamos en tus necesidades y además cumplimos con los estándares de Clasificación Nacional de Ocupaciones, las mismas que lidera el SENA, lo que hace que nuestros programas y diseños curriculares tengan aplicabilidad a las Competencias Laborales determinadas en la comunidad donde nos encontremos y en el sector donde tú quieres trabajar o quieras fortalecer.</p>
                 </section>
             </div>
-            <div class="G row">
+            <div class="G row mx-5">
                 <img class="mx-auto col-md-6 col-lg-6 wow animate__animated animate__pulse" src="./imag/Adelante.jpg" alt="Educación por competencias">
                 <section class="G3B mx-auto col-md-6 col-lg-6">
                     <h2> Educación por competencia, un paso adelante</h2> 
@@ -647,8 +659,10 @@
 
             </div>
         </section>
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-        Instituto de Capacitación en Áreas Administrativas y de Sistemas
+        <div class="footer p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            <p class="text-center">Instituto de Capacitación en Áreas Administrativas y de Sistemas</p>
+            <hr>
+            <p class="text-start"><b>  Diseño y Desarrollo:</b> <a href="https://github.com/GheraldineSalazarL" target="_blanc">Gheraldine Salazar Lasso</a> <br> ©2022, All right reserved.</p>
         </div>
         <a class="wpp" href="https://wa.me/573216632268" target="_blanc"> <img src="./imag/whatsapp.png" alt="WhatsApp" width="40px"></a>
     </footer>
@@ -666,5 +680,35 @@
     <script src="./js/wow.min.js"></script><script>new WOW().init();</script>
       
   </body>
+
+  <script>
+        const btn = document.getElementById('button');
+
+        document.getElementById('form')
+        .addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        btn.value = 'Eviando...';
+
+        const serviceID = 'default_service';
+        const templateID = 'template_m0mvoem';
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                btn.value = 'Enviar';
+                form.reset();
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Mensaje enviado correctamente!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }, (err) => {
+            btn.value = 'Enviar';
+                alert(JSON.stringify(err));
+            });
+        });
+    </script>
     
 </html>

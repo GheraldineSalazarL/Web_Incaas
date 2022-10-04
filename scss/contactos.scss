@@ -1,10 +1,8 @@
 body{
     .contactos{
         padding: 50px 0px 50px 0px;
-        .barra{
-            
+        .barra{  
             .card{
-              
                 ul{
                     a{
                         text-decoration: none;
@@ -17,7 +15,7 @@ body{
             
         }
         .info{
-            padding-left: 40px;
+            // padding-left: 40px;
             .encontrarnos{
                 display: flex;
                 flex-direction: column;
@@ -41,8 +39,7 @@ body{
                 }
                 .escribir{
                     form{
-                        padding-top: 10px;
-                        padding-left: 30px;
+                        @extend .comunicacion;
                         width: 70%;
                         .boton{
                             width: 100%;
@@ -56,6 +53,23 @@ body{
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:576px){
+    body{
+        .contactos{
+                padding: 30px 30px 20px 30px;
+        }
+    }
+}
+@media screen and (max-width:767px){
+    body{
+        .contactos{
+            .barra{
+                margin: auto !important;
             }
         }
     }

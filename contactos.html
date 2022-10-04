@@ -19,10 +19,10 @@
 
   <body>
     <header>
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark " >
-          <div class="container">
-            <a class="navbar-brand" href="index.html">
-              <img src="./imag/Logo.jpg" alt="INCAAS" width="280">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark " >
+        <div class="container">
+          <a class="navbar-brand col-xl-3 col-lg-4 col-9" href="index.html">
+            <img src="./imag/Logo.jpg" alt="INCAAS" width="280" class="img-fluid">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -59,7 +59,7 @@
 
     <main class="contactos container">
         <div class="row">
-            <div class="barra col-md-4 col-lg-3">
+            <div class="barra col-10 col-md-4 col-lg-3">
               <div class="card text-white " style="height: auto; background-color: #0c1c34;">
                 <div class="card-header" >
                   <b> Contactos </b>
@@ -67,7 +67,6 @@
                 <ul class="list-group list-group-flush" >
                     <a href="contactos.html#encontrarnos"><li class="list-group-item text-white" style="background-color: #0c1c34;">¿Dónde encontrarnos?</li></a>
                     <a href="contactos.html#comunicacion"><li class="list-group-item text-white" style="background-color: #0c1c34;">¿A dónde comunicarse?</li></a>
-                    <a href="contactos.html#escribir"><li class="list-group-item text-white" style="background-color: #0c1c34;">Escríbenos</li></a>
                 </ul>
               </div>
             </div>
@@ -76,9 +75,9 @@
                 <div class="encontrarnos" id="encontrarnos">
                   <div class="row">
                       <h3>Direcciones</h3>
-                      <div class="lugar">
-                          <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9182085096572!2d-77.28850328600198!3d1.2170753623285309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2ed571a3c00b19%3A0x7848ae770c98b66b!2sAurora%20Reservado!5e0!3m2!1ses-419!2sar!4v1648688002689!5m2!1ses-419!2sar" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                          <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.406900988543!2d-77.63368728638123!3d0.8228243993997414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e296becc7c9a369%3A0xed71b1d0b4c078e4!2sINSTITUCION%20EDUCATIVA%20INMACULADA%20CONCEPCION!5e0!3m2!1ses-419!2sar!4v1648688079377!5m2!1ses-419!2sar" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                      <div class="lugar row">
+                          <iframe class="col-9 col-sm-6 col-xl-4"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9182085096572!2d-77.28850328600198!3d1.2170753623285309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2ed571a3c00b19%3A0x7848ae770c98b66b!2sAurora%20Reservado!5e0!3m2!1ses-419!2sar!4v1648688002689!5m2!1ses-419!2sar" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                          <iframe class="col-9 col-sm-6 col-xl-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.406900988543!2d-77.63368728638123!3d0.8228243993997414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e296becc7c9a369%3A0xed71b1d0b4c078e4!2sINSTITUCION%20EDUCATIVA%20INMACULADA%20CONCEPCION!5e0!3m2!1ses-419!2sar!4v1648688079377!5m2!1ses-419!2sar" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                       </div>
                   </div>
                   <div class="row">
@@ -89,29 +88,6 @@
                         <p><i class="fas fa-envelope me-3"></i> coordinacion.incaas@gmail.com </p>
                         <p><i class="fas fa-phone me-3"></i>(+57) 313 744 4734</p>
                         <p><i class="fa-brands fa-whatsapp me-3"></i> (+57) 321 663 2268</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <h3>Escríbenos</h3>
-                    <div class="escribir" id="escribir">
-                        <form class=" wow animate__animated animate__pulse">
-                          <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
-                          </div>
-                          <div class="mb-3">
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="email" required>
-                          </div>
-                          <div class="mb-3">
-                            <input type="tel" class="form-control" placeholder="Teléfono" name="telefono" required>
-                          </div>
-                          <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                          </div>
-                          <div class="boton ">
-                            <button type="submit" class="btn btn-primary ">Enviar</button>
-                          </div>
-                        </form>
                     </div>
                   </div>
                 </div>
@@ -206,8 +182,10 @@
 
             </div>
         </section>
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-        Instituto de Capacitación en Áreas Administrativas y de Sistemas
+        <div class="footer p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          <p class="text-center">Instituto de Capacitación en Áreas Administrativas y de Sistemas</p>
+          <hr>
+          <p class="text-start"><b>  Diseño y Desarrollo:</b> <a href="https://github.com/GheraldineSalazarL" target="_blanc">Gheraldine Salazar Lasso</a> <br> ©2022, All right reserved.</p>
         </div>
         <a class="wpp" href="https://wa.me/573216632268" target="_blanc"> <img src="./imag/whatsapp.png" alt="WhatsApp" width="40px"></a>
     </footer>

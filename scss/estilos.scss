@@ -54,11 +54,11 @@ body{
             }
         }
         .sticky{
-            padding: 5px 90px;
+            padding: 5px ;
             background-color: $fondo;
         }
         .scroll{
-            width: 150px;
+            width: 180px;
         }  
         .inicio{
             background-color: $azul;
@@ -73,6 +73,7 @@ body{
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center center;
+            background-attachment: fixed;
             color: $blanco;
             display: flex;
             justify-content: flex-start;
@@ -90,4 +91,15 @@ body{
         bottom: 20px;
         right: 30px;
     }
+    .footer{
+        p{
+            a{
+                text-decoration: none;
+                color: #6c757D;
+            }
+        }
+        
+    }
 }
+
+
