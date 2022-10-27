@@ -1,0 +1,40 @@
+body{
+    .checkoutExito{
+            // background-image: linear-gradient(78deg, rgba(8,59,134,0.8379726890756303) 0%, rgba(106,181,40,0.48503151260504207) 100%), url(../imag/fondoCheckoutExito.jpg);
+            // background-repeat: no-repeat;
+            // background-size: cover;
+            // background-position: center;
+            background-color: $fondo;
+            height: 100vh;
+        .checkoutExitoInt{
+            height: 100%;
+            margin: auto;
+            align-self: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            div{
+                padding: 20px;
+                background-color: white;
+                text-align: center;
+                border-radius: 15px;
+                h3{
+                    font-family: $titulos;
+                    color: $verde;
+                }
+                .mBoton{
+                    background-color: $verde;
+                    text-decoration: none;
+                    border: none;
+                    padding: 10px 12px 10px 12px;
+                    color: white;
+                    border-radius: 4px;
+                    &:hover{
+                        background-color: $azul;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

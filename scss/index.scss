@@ -25,10 +25,10 @@ body{
                     }
                 }
                 .B{
-                    width: 400px;
+                    // width: 100%;
                     margin: 0px 0 20px 0;
                     align-self: center;
-                    .form{
+                    .formu{
                         font-size: 1rem;
                         border: $azul solid;
                         border-radius: 10px;
@@ -192,6 +192,17 @@ body{
     }
     .carousel3{
         display: none;
+    }
+}
+@media screen and (max-width:768px){
+    .Index{
+        .init{
+            .initf{
+                .B{
+                    justify-content: center !important;
+                }
+            }
+        }
     }
 }
 @media screen and (max-width:576px){

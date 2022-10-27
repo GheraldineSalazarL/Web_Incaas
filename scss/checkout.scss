@@ -1,0 +1,64 @@
+body{
+    header{
+        background-color: $fondo;
+    }
+    main{
+        .c{
+            background-color: $fondo;
+            .cInt{
+                background-color: white;
+            }
+        }
+        .mBoton{
+            background-color: $verde;
+            text-decoration: none;
+            border: none;
+            padding: 10px 12px 10px 12px;
+            color: white;
+            border-radius: 4px;
+            &:hover{
+                background-color: $azul;
+                color: white;
+            }
+        }
+       
+        .abstract{
+            background-color: $fondo;
+            color: white;
+            height: 83vh;
+            h3, .programa{
+                color: $verde;
+            }
+            h6{
+                font-size: 0.8rem;
+                padding-top: 5px;
+            }
+        }
+        .formu3{
+            button{
+                text-decoration: none;
+                color: black;
+                &:hover{
+                    box-shadow:  3px 4px 9px -1px rgba(21,49,84,1);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1327px) and (max-width: 1394px) {
+    .abstract{
+        height: 85vh !important;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1326px) {
+    .abstract{
+        height: 90vh !important;
+    }
+}
+@media screen and (max-width:768px) {
+    .abstract{
+        height: 100% !important;
+        padding: 40px 20px 30px 20px !important;
+    }
+}

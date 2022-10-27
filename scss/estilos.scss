@@ -15,6 +15,8 @@ $titulos: 'Ubuntu', sans-serif;
 @import "programas";
 @import "matriculas";
 @import "contactos";
+@import "checkout";
+@import "checkoutExito";
 
 body{
     color: black;
@@ -50,6 +52,13 @@ body{
                             transform: scaleX(1);
                         }
                     }
+                }
+            }
+            .Login{
+                color: white;
+                margin-left: 15px;
+                &:hover{
+                    color: $verde;
                 }
             }
         }
@@ -99,6 +108,22 @@ body{
             }
         }
         
+    }
+}
+
+
+@media screen and (min-width:313px) and (max-width:441px){
+    .Login{
+        width: 100%;
+        margin-right: 20px !important;
+        i{
+            float: right;
+        }
+    }
+}
+@media screen and  (max-width:312px){
+    .Login{
+        margin-right: 20px !important;
     }
 }
 

@@ -20,39 +20,38 @@ body .Index .init {
       display: block;
       text-align: center; }
   body .Index .init .initf .B {
-    width: 400px;
     margin: 0px 0 20px 0;
     align-self: center; }
-    body .Index .init .initf .B .form {
+    body .Index .init .initf .B .formu {
       font-size: 1rem;
       border: #083B86 solid;
       border-radius: 10px;
       padding: 15px;
       box-shadow: 7px 7px 10px #c6c6c6;
       background-color: #ffffff; }
-      body .Index .init .initf .B .form .titulof {
+      body .Index .init .initf .B .formu .titulof {
         font-family: "Ubuntu", sans-serif;
         text-align: center;
         color: #083B86; }
-      body .Index .init .initf .B .form form .controls {
+      body .Index .init .initf .B .formu form .controls {
         width: 100%;
         padding: 5px;
         border: 1px solid #083B86;
         border-radius: 4px;
         margin-bottom: 5px;
         font-family: "Josefin Sans", sans-serif; }
-      body .Index .init .initf .B .form form .pf a {
+      body .Index .init .initf .B .formu form .pf a {
         color: #083B86;
         text-decoration: none; }
-        body .Index .init .initf .B .form form .pf a:hover {
+        body .Index .init .initf .B .formu form .pf a:hover {
           color: #6AB528;
           text-decoration: underline; }
-      body .Index .init .initf .B .form form .extboton {
+      body .Index .init .initf .B .formu form .extboton {
         width: 100%;
         margin: auto;
         display: flex;
         justify-content: center; }
-        body .Index .init .initf .B .form form .extboton .boton {
+        body .Index .init .initf .B .formu form .extboton .boton {
           background-color: #6AB528;
           border: none;
           padding: 10px;
@@ -60,7 +59,7 @@ body .Index .init {
           margin-left: auto;
           margin-right: auto;
           border-radius: 4px; }
-          body .Index .init .initf .B .form form .extboton .boton:hover {
+          body .Index .init .initf .B .formu form .extboton .boton:hover {
             background-color: #083B86;
             color: white; }
 
@@ -139,6 +138,10 @@ body .Index .H {
           max-height: 100%; }
   .carousel3 {
     display: none; } }
+
+@media screen and (max-width: 768px) {
+  .Index .init .initf .B {
+    justify-content: center !important; } }
 
 @media screen and (max-width: 576px) {
   .carousel1 {
@@ -229,33 +232,21 @@ body .tecnicos, body .cursos, body .seminarios {
   body .tecnicos, body .cursos, body .seminarios {
     padding: 0px 20px 0px 20px; } }
 
-body .matriculas {
-  margin: auto;
-  padding: 30px; }
-  body .matriculas .text {
-    margin: auto; }
-    body .matriculas .text h1 {
-      font-family: "Ubuntu", sans-serif;
-      color: #083B86;
-      text-align: center;
-      padding-bottom: 15px; }
-    body .matriculas .text img {
-      width: auto; }
-  body .matriculas .vinc .card form {
-    width: 80%; }
-    body .matriculas .vinc .card form .form-check .textc a {
-      text-decoration: none;
-      color: #ffffff; }
-      body .matriculas .vinc .card form .form-check .textc a:hover {
-        color: #6AB528;
-        text-decoration: none; }
-    body .matriculas .vinc .card form .boton {
-      width: 100%; }
-      body .matriculas .vinc .card form .boton button {
-        background-color: #6AB528; }
-        body .matriculas .vinc .card form .boton button:hover {
-          background-color: #083B86;
-          color: #ffffff; }
+body .matriculas .matriculasInit {
+  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-left: 50px;
+  margin-right: 50px; }
+  body .matriculas .matriculasInit .inscription h1 {
+    font-family: "Ubuntu", sans-serif;
+    color: #083B86; }
+
+@media screen and (max-width: 550px) {
+  body .matriculas .matriculasInit {
+    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px; } }
 
 body .contactos {
   padding: 50px 0px 50px 0px; }
@@ -298,6 +289,83 @@ body .contactos {
   body .contactos .barra {
     margin: auto !important; } }
 
+body header {
+  background-color: #0c1c34; }
+
+body main .c {
+  background-color: #0c1c34; }
+  body main .c .cInt {
+    background-color: white; }
+
+body main .mBoton {
+  background-color: #6AB528;
+  text-decoration: none;
+  border: none;
+  padding: 10px 12px 10px 12px;
+  color: white;
+  border-radius: 4px; }
+  body main .mBoton:hover {
+    background-color: #083B86;
+    color: white; }
+
+body main .abstract {
+  background-color: #0c1c34;
+  color: white;
+  height: 83vh; }
+  body main .abstract h3, body main .abstract .programa {
+    color: #6AB528; }
+  body main .abstract h6 {
+    font-size: 0.8rem;
+    padding-top: 5px; }
+
+body main .formu3 button {
+  text-decoration: none;
+  color: black; }
+  body main .formu3 button:hover {
+    box-shadow: 3px 4px 9px -1px #153154; }
+
+@media screen and (min-width: 1327px) and (max-width: 1394px) {
+  .abstract {
+    height: 85vh !important; } }
+
+@media screen and (min-width: 768px) and (max-width: 1326px) {
+  .abstract {
+    height: 90vh !important; } }
+
+@media screen and (max-width: 768px) {
+  .abstract {
+    height: 100% !important;
+    padding: 40px 20px 30px 20px !important; } }
+
+body .checkoutExito {
+  background-color: #0c1c34;
+  height: 100vh; }
+  body .checkoutExito .checkoutExitoInt {
+    height: 100%;
+    margin: auto;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    body .checkoutExito .checkoutExitoInt div {
+      padding: 20px;
+      background-color: white;
+      text-align: center;
+      border-radius: 15px; }
+      body .checkoutExito .checkoutExitoInt div h3 {
+        font-family: "Ubuntu", sans-serif;
+        color: #6AB528; }
+      body .checkoutExito .checkoutExitoInt div .mBoton {
+        background-color: #6AB528;
+        text-decoration: none;
+        border: none;
+        padding: 10px 12px 10px 12px;
+        color: white;
+        border-radius: 4px; }
+        body .checkoutExito .checkoutExitoInt div .mBoton:hover {
+          background-color: #083B86;
+          color: white; }
+
 body {
   color: black;
   font-family: "Josefin Sans", sans-serif;
@@ -328,6 +396,11 @@ body {
             transition: transform 0.5s ease-in-out; }
           body header nav ul li a:hover::before {
             transform: scaleX(1); }
+    body header nav .Login {
+      color: white;
+      margin-left: 15px; }
+      body header nav .Login:hover {
+        color: #6AB528; }
   body header .sticky {
     padding: 5px;
     background-color: #0c1c34; }
@@ -361,3 +434,14 @@ body {
   body .footer p a {
     text-decoration: none;
     color: #6c757D; }
+
+@media screen and (min-width: 313px) and (max-width: 441px) {
+  .Login {
+    width: 100%;
+    margin-right: 20px !important; }
+    .Login i {
+      float: right; } }
+
+@media screen and (max-width: 312px) {
+  .Login {
+    margin-right: 20px !important; } }
