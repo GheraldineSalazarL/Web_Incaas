@@ -81,7 +81,7 @@ body{
             background-image: url(../imag/init_contactos.jpg);
             background-repeat: no-repeat;
             background-size: cover;
-            background-position: center center;
+            background-position:center right;
             background-attachment: fixed;
             color: $blanco;
             display: flex;
@@ -112,7 +112,7 @@ body{
 }
 
 
-@media screen and (min-width:313px) and (max-width:441px){
+@media screen and (min-width:322px) and (max-width:441px){
     .Login{
         width: 100%;
         margin-right: 20px !important;
@@ -126,5 +126,10 @@ body{
         margin-right: 20px !important;
     }
 }
+@media screen and  (max-width:443px){
+    .contactos, .cursos, .matriculas, .seminarios, .tecnicos{
+        margin-top: 30px !important;
+    }
 
+}
 

@@ -34,6 +34,14 @@ body{
                 padding-top: 5px;
             }
         }
+        .formu2{
+            .term{
+                color: $azul;
+                &:hover{
+                    color: $verde;
+                }
+            }
+        }
         .formu3{
             button{
                 text-decoration: none;
@@ -41,6 +49,9 @@ body{
                 &:hover{
                     box-shadow:  3px 4px 9px -1px rgba(21,49,84,1);
                 }
+            }
+            .pantallaChicaResumen{
+                display: none;
             }
         }
     }
@@ -60,5 +71,11 @@ body{
     .abstract{
         height: 100% !important;
         padding: 40px 20px 30px 20px !important;
+    }
+    .formu3{
+        .pantallaChicaResumen{
+            display:block !important;
+            color: $verde;
+        }
     }
 }

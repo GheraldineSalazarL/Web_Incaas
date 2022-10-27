@@ -88,7 +88,7 @@
 
                             <div class="mb-3 form-check">
                               <input type="checkbox" class="form-check-input" id="Terminos" required>
-                              <label class="form-check-label" for="Terminos">Acepto términos y condiciones</label>
+                              <label class="form-check-label" for="Terminos">Acepto <b onClick="aceptoTerminos()" class="term" > <b> términos y condiciones </b> </b></label>
                             </div>
                         </div>
                         <div id="btnSiguienteFor3">
@@ -102,15 +102,16 @@
                     <div class="formu3 visually-hidden" id="formu3">
                         <h3 class="mb-3"><b> 3. Pago </b></h3>
                         <h4>Recuerda: Si pagas tu programa completo, obtienes un 10% de descuento extra</h4>
-                        <p>*Al final del programa se debe pagar los derechos de certificación, su costo varía según la fecha de finalización</p>
+                        <p class="pantallaChicaResumen">*Más abajo encuentras el resumen de pago</p>
 
                         <label for="facilidadPago" class="form-label mt-3">Seleccione la facilidad de pago</label>
                         <select onChange="fPago()" class="facilidadPago form-select" name="facilidadPago" id="facilidadPago">
                           <option value="cuotas">Cuotas</option>
-                          <option value="unPago">1 cuota (10% dcto extra)</option>
+                          <option value="unPago">Pago completo - 1 cuota (10% dcto extra)</option>
                         </select>
 
                         <label for="" class="form-label mt-3">Medio de pago</label>
+                        <input class="visually-hidden form-select" name="medioPago" id="medioPago"></input>
                         <div class="d-flex flex-row flex-wrap justify-content-center">
                             <button onClick="pagoLinea()" type="submit" id="buttonEnvioForm"  class="my-2 border rounded bg-white d-flex flex-column mx-3 col-11 col-sm-5 col-md-8 col-lg-5 col-xl-4 h-100 justify-content-center">
                                 <div class="d-flex flex-row p-2 m-auto">
@@ -570,7 +571,9 @@
 
             }
 
-            function pagoLinea(){   
+            var medioPago = document.getElementById('medioPago')
+            function pagoLinea(){  
+                medioPago.value="Online"
                 if(programa.value==="tecnico"){
                     if(facilidadPago.value==="unPago"){
                         window.location = "https://biz.payulatam.com/L0d06e212DCBFB9";
@@ -587,10 +590,29 @@
               
             }
 
+            pagoTotalTecnico= Matricula + cuotaTecnico;
+            pagoTotalCurso = Matricula + cuotaCurso;
+            pagoTotalTecnicoPromo= (Matricula + (ncuotaTecnico*cuotaTecnico))*(1-promo);
+            pagoTotalCursoPromo = (Matricula + (ncuotaCurso*cuotaCurso))*(1-promo);
+
             function pagoTransferencia(){
+                medioPago.value="Bancolombia"
+                if(programa.value==="tecnico"){
+                    if(facilidadPago.value==="unPago"){
+                        Total=pagoTotalTecnicoPromo;
+                    }else if(facilidadPago.value==="cuotas"){
+                        Total=pagoTotalTecnico;
+                    }
+                } else if(programa.value==="curso"){
+                    if(facilidadPago.value==="unPago"){
+                        Total=pagoTotalCursoPromo;
+                    }else if(facilidadPago.value==="cuotas"){
+                        Total=pagoTotalCurso;
+                    }
+                }
                 Swal.fire({
                 title: 'Incripción realizada',
-                text: "Solo falta un paso!",
+                // text: "Solo falta un paso!"+pagoTotalTecnico,
                 html:
                     '<p class="text-start"> Solo falta un paso! tu cupo está reservado, para confirmarlo debes realizar tu pago antes de las próximas <b>24 horas</b>, hazlo por medio de una consignación bancaria a una cuenta de ahorros de Bancolombia, tienes dos opciones: </p>' +
                     '<ul class="text-start"> <li>Consignar por medio de un corresponsal bancario de Bancolombia o transferir virtualmente, si así lo haces, no deberás pagar ningún costo adicional por la transacción.</li> <li>Consignar por medio de la sucursal física de Bancolombia, si lo haces así, debes pagar el costo adicional de la transacción, en el banco te dirán cuál es ese cobro.</li> </ul> ' +
@@ -598,8 +620,8 @@
                     '<p class="text-start"><b>Cuenta de ahorros N°:</b> 91211860036</p>'+ 
                     '<p class="text-start"><b>Titular N°:</b> Dorys M Lasso Yela</p>'+ 
                     '<p class="text-start"><b>Cédula N°:</b> 30726466</p>' + 
-                    '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>',
-                icon: 'info',
+                    '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>' + '<b>Total: </b>' + Total,
+                icon: 'success',
                 showCancelButton: true,
                 confirmButtonColor: '#6AB528',
                 cancelButtonColor: '#083B86',
@@ -614,6 +636,20 @@
             }
 
             function pagoTransferenciaDigital(){
+                medioPago.value="Nequi o Daviplata"
+                if(programa.value==="tecnico"){
+                    if(facilidadPago.value==="unPago"){
+                        Total=pagoTotalTecnicoPromo;
+                    }else if(facilidadPago.value==="cuotas"){
+                        Total=pagoTotalTecnico;
+                    }
+                } else if(programa.value==="curso"){
+                    if(facilidadPago.value==="unPago"){
+                        Total=pagoTotalCursoPromo;
+                    }else if(facilidadPago.value==="cuotas"){
+                        Total=pagoTotalCurso;
+                    }
+                }
                 Swal.fire({
                 title: 'Incripción realizada',
                 text: "Solo falta un paso!",
@@ -621,8 +657,8 @@
                     '<p class="text-start"> Solo falta un paso! tu cupo está reservado, para confirmarlo debes realizar tu pago antes de las próximas <b>24 horas</b>, hazlo por medio de una transferencia por la App Nequi o DaviPlata: </p>' +
                     '<p class="text-start">Realiza el pago con los siguientes datos:</p>' + 
                     '<p class="text-start"><b>Cuenta N°:</b> 313 744 4734</p>'+ 
-                    '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>',
-                icon: 'info',
+                    '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>'+ '<b>Total: </b>' + Total,
+                icon: 'success',
                 showCancelButton: true,
                 confirmButtonColor: '#6AB528',
                 cancelButtonColor: '#083B86',
@@ -637,6 +673,20 @@
             }
 
             function pagoGiro(){
+                medioPago.value="Giro"
+                if(programa.value==="tecnico"){
+                    if(facilidadPago.value==="unPago"){
+                        Total=pagoTotalTecnicoPromo;
+                    }else if(facilidadPago.value==="cuotas"){
+                        Total=pagoTotalTecnico;
+                    }
+                } else if(programa.value==="curso"){
+                    if(facilidadPago.value==="unPago"){
+                        Total=pagoTotalCursoPromo;
+                    }else if(facilidadPago.value==="cuotas"){
+                        Total=pagoTotalCurso;
+                    }
+                }
                 Swal.fire({
                 title: 'Incripción realizada',
                 text: "Solo falta un paso!",
@@ -645,8 +695,8 @@
                     '<p class="text-start">Realiza el pago con los siguientes datos:</p>' +
                     '<p class="text-start"><b>Titular N°:</b> Dorys M Lasso Yela</p>'+ 
                     '<p class="text-start"><b>Cédula N°:</b> 30726466</p>' + 
-                    '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>',
-                icon: 'info',
+                    '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>'+ '<b>Total: </b>' + Total,
+                icon: 'success',
                 showCancelButton: true,
                 confirmButtonColor: '#6AB528',
                 cancelButtonColor: '#083B86',
@@ -659,6 +709,21 @@
                     }
                 });
             }
+
+            // var term = document.getElementById("term");
+            function aceptoTerminos(){
+                Swal.fire({
+                title:'Terminos y Condiciones',
+                html:
+                    '<p class="text-start"> Con la aceptación de este beneficio educativo estoy consiente que: </p>' +
+                    '<ol class="text-start"> <li>Reconozco que en caso de mi retiro voluntario no me será reintegrado el dinero que aporté hasta dicha instancia.</li> <li> Me comprometo a cumplir el manual de convivencia del instituto.</li> <li> Este formulario es único e intransferible. </li> <li> La vinculación a los programas es voluntaria e independiente a la Institución Educativa a la que pertenece. </li> <li> Con este formulario de afiliación, el estudiante podrá ingresar a los diferentes cursos y programas técnicos laborales en el departamento de Nariño donde se tenga sedes y convenios, además, en modalidad virtual desde cualquier parte del mundo. </li> <li> Al finalizar el programa, el estudiante recibirá: si es un Técnico Laboral, una Certificación de Aptitud Ocupacional; si es un Curso, una Constancia de Asistencia con intensidad horaria de 100h. </li> <li>Al finalizar el programa, el estudiante deberá hacer un pago de Derechos de Certificación, el costo varía según la fecha de culminación. </ol>' + 
+                    '<p class="text-center"><b>INCAAS comprometido a brindar una capacitación con calidad y responsabilidad.</b></p>',
+                icon: 'info',
+                confirmButtonColor: '#6AB528',
+                confirmButtonText: '<i class="fa fa-thumbs-up"></i> Acepto',
+                })
+            }
+
             
             
         </script>

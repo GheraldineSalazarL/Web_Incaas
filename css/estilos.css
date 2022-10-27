@@ -318,11 +318,19 @@ body main .abstract {
     font-size: 0.8rem;
     padding-top: 5px; }
 
+body main .formu2 .term {
+  color: #083B86; }
+  body main .formu2 .term:hover {
+    color: #6AB528; }
+
 body main .formu3 button {
   text-decoration: none;
   color: black; }
   body main .formu3 button:hover {
     box-shadow: 3px 4px 9px -1px #153154; }
+
+body main .formu3 .pantallaChicaResumen {
+  display: none; }
 
 @media screen and (min-width: 1327px) and (max-width: 1394px) {
   .abstract {
@@ -335,7 +343,10 @@ body main .formu3 button {
 @media screen and (max-width: 768px) {
   .abstract {
     height: 100% !important;
-    padding: 40px 20px 30px 20px !important; } }
+    padding: 40px 20px 30px 20px !important; }
+  .formu3 .pantallaChicaResumen {
+    display: block !important;
+    color: #6AB528; } }
 
 body .checkoutExito {
   background-color: #0c1c34;
@@ -416,7 +427,7 @@ body {
     background-image: url(../imag/init_contactos.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center right;
     background-attachment: fixed;
     color: #ffffff;
     display: flex;
@@ -435,7 +446,7 @@ body {
     text-decoration: none;
     color: #6c757D; }
 
-@media screen and (min-width: 313px) and (max-width: 441px) {
+@media screen and (min-width: 322px) and (max-width: 441px) {
   .Login {
     width: 100%;
     margin-right: 20px !important; }
@@ -445,3 +456,7 @@ body {
 @media screen and (max-width: 312px) {
   .Login {
     margin-right: 20px !important; } }
+
+@media screen and (max-width: 443px) {
+  .contactos, .cursos, .matriculas, .seminarios, .tecnicos {
+    margin-top: 30px !important; } }
