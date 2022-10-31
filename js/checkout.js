@@ -316,7 +316,7 @@ function resumenPago(){
     }
 
     column1P.innerHTML = `
-        <p class="mb-0 pb-0 pe-3">Cuotas</p>
+        <p class="mb-0 pb-0 pe-3">Cuotas: 1</p>
         <p class="mt-0 pt-0"><em>(Primera cuota)</em></p>`;
     column1.appendChild(column1P);
 
@@ -355,7 +355,7 @@ function fPago(){
             total.appendChild(TotalP);
 
             column1P.innerHTML = `
-            <p class="mb-0 pb-0 pe-3">${ncuotaTecnico+" Cuotas"}</b></p>
+            <p class="mb-0 pb-0 pe-3">${"Cuotas: " + ncuotaTecnico}</b></p>
             <p class="mt-0 pt-0"><em>(Cantidad de cuotas totales)</em></p>`;
             column1.appendChild(column1P);
 
@@ -376,7 +376,7 @@ function fPago(){
             total.appendChild(TotalP);
 
             column1P.innerHTML = `
-            <p class="mb-0 pb-0 pe-3">${ncuotaCurso +" Cuotas"}</b></p>
+            <p class="mb-0 pb-0 pe-3">${"Cuotas: " + ncuotaCurso}</b></p>
             <p class="mt-0 pt-0"><em>(Cantidad de cuotas totales)</em></p>`;
             column1.appendChild(column1P);
         }
