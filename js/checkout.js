@@ -17,7 +17,7 @@ let Matricula=80000
 let cuotaTecnico=60000
 let cuotaCurso=48000
 let ncuotaTecnico=24
-let ncuotaCurso=6.75
+let ncuotaCurso=7
 let promo=0.10
 
 var matricula=document.getElementById("matricula");
@@ -240,7 +240,7 @@ var column2=document.getElementById("column2");
 column2.innerHTML = "";
 var column2P=document.createElement('column2P');
 
-pagoTotalTecnico= Matricula + cuotaTecnico;
+pagoTotalTecnico=  Matricula + cuotaTecnico;
 pagoTotalCurso = Matricula + cuotaCurso;
 pagoTotalTecnicoPromo= (Matricula + (ncuotaTecnico*cuotaTecnico))*(1-promo);
 pagoTotalCursoPromo = (Matricula + (ncuotaCurso*cuotaCurso))*(1-promo);
@@ -252,18 +252,18 @@ function resumenPago(){
 
         nombreP.innerHTML = `
             <h5 class="programa pe-3"> ${nombPograma.value} </h5> 
-            <h5><b>${"$" + pagoTotalTecnico}</b></h5>`; 
+            <h5><b>${accounting.formatMoney(pagoTotalTecnico, '$', 0, '.', ',')}</b></h5>`; 
         nombrePrograma.appendChild(nombreP);
 
         
         CuotaP.innerHTML = `
-            <h6><del>${"$" + (cuotaTecnico*2)}</del></h6>
-            <p class="ps-2">${"$" + (cuotaTecnico)}</p>`;
+            <h6><del>${accounting.formatMoney((cuotaTecnico*2), '$', 0, '.', ',')}</del></h6>
+            <p class="ps-2">${accounting.formatMoney(cuotaTecnico, '$', 0, '.', ',')}</p>`;
         cuota.appendChild(CuotaP);
-
+        
         TotalP.innerHTML = `
             <h5>Total</h5>
-            <h5><b> ${"$" + pagoTotalTecnico} </b></h5>`;
+            <h5><b> ${accounting.formatMoney(pagoTotalTecnico, '$', 0, '.', ',')} </b></h5>`;
         total.appendChild(TotalP);
 
         descFacilidadPagoP.innerHTML = `
@@ -273,17 +273,17 @@ function resumenPago(){
     } else if(programa.value==="curso") {
         nombreP.innerHTML = `
             <h5 class="programa pe-3"> ${nombPograma.value} </h5> 
-            <h5><b>${"$" + pagoTotalCurso}</b></h5>`; 
+            <h5><b>${accounting.formatMoney(pagoTotalCurso, '$', 0, '.', ',')}</b></h5>`; 
         nombrePrograma.appendChild(nombreP);
-        
         CuotaP.innerHTML = `
-            <h6><del>${"$" + (cuotaCurso*2)}</del></h6>
-            <p class="ps-2">${"$" + (cuotaCurso)}</p>`;
+            <h6><del>${accounting.formatMoney((cuotaCurso*2), '$', 0, '.', ',')}</del></h6>
+            <p class="ps-2">${accounting.formatMoney(cuotaCurso, '$', 0, '.', ',')}</p>`;
         cuota.appendChild(CuotaP);
+        
 
         TotalP.innerHTML = `
             <h5>Total</h5>
-            <h5><b> ${"$" + pagoTotalCurso} </b></h5>`;
+            <h5><b> ${accounting.formatMoney(pagoTotalCurso, '$', 0, '.', ',')} </b></h5>`;
         total.appendChild(TotalP);
 
         descFacilidadPagoP.innerHTML = `
@@ -293,8 +293,8 @@ function resumenPago(){
     }
 
     MatriculaP.innerHTML = `
-        <h6><del>${"$" + (Matricula*2)}</del></h6>
-        <p class="ps-2">${"$" + (Matricula)}</p>`;
+        <h6><del>${accounting.formatMoney((Matricula*2), '$', 0, '.', ',')}</del></h6>
+        <p class="ps-2">${accounting.formatMoney(Matricula, '$', 0, '.', ',')}</p>`;
     matricula.appendChild(MatriculaP);
 
     if(modalidad.value==="Virtual"){
@@ -341,49 +341,48 @@ function fPago(){
         if(programa.value==="tecnico"){
             nombreP.innerHTML = `
                 <h5 class="programa pe-3"> ${nombPograma.value} </h5> 
-                <h5><b>${"$" + pagoTotalTecnicoPromo}</b></h5>`; 
+                <h5><b>${accounting.formatMoney(pagoTotalTecnicoPromo, '$', 0, '.', ',')}</b></h5>`; 
             nombrePrograma.appendChild(nombreP);
 
             CuotaP.innerHTML = `
-                <h6><del>${"$" + (ncuotaTecnico*cuotaTecnico*2)}</del></h6>
-                <p class="ps-2">${"$" + ((ncuotaTecnico*cuotaTecnico*(1-promo)))}</p>`;
+                <h6><del>${accounting.formatMoney((ncuotaTecnico*cuotaTecnico*2), '$', 0, '.', ',')}</del></h6>
+                <p class="ps-2">${accounting.formatMoney((ncuotaTecnico*cuotaTecnico*(1-promo)), '$', 0, '.', ',')}</p>`;
             cuota.appendChild(CuotaP);
 
             TotalP.innerHTML = `
                 <h5>Total</h5>
-                <h5><b> ${"$" + pagoTotalTecnicoPromo} </b></h5>`;
+                <h5><b> ${accounting.formatMoney(pagoTotalTecnicoPromo, '$', 0, '.', ',')} </b></h5>`;
             total.appendChild(TotalP);
 
             column1P.innerHTML = `
-            <p class="mb-0 pb-0 pe-3">${"Cuotas: " + ncuotaTecnico}</b></p>
-            <p class="mt-0 pt-0"><em>(Cantidad de cuotas totales)</em></p>`;
+                <p class="mb-0 pb-0 pe-3">${"Programa " + programa.value}</p>
+                `;
             column1.appendChild(column1P);
 
         } else if(programa.value==="curso") {
             nombreP.innerHTML = `
                 <h5 class="programa pe-3"> ${nombPograma.value} </h5> 
-                <h5><b>${"$" + pagoTotalCursoPromo}</b></h5>`; 
+                <h5><b>${accounting.formatMoney(pagoTotalCursoPromo, '$', 0, '.', ',')}</b></h5>`; 
             nombrePrograma.appendChild(nombreP);
             
             CuotaP.innerHTML = `
-                <h6><del>${"$" + (ncuotaCurso*cuotaCurso*2)}</del></h6>
-                <p class="ps-2">${"$" + ((ncuotaCurso*cuotaCurso*(1-promo)))}</p>`;
+                <h6><del>${accounting.formatMoney((ncuotaCurso*cuotaCurso*2), '$', 0, '.', ',')}</del></h6>
+                <p class="ps-2">${accounting.formatMoney((ncuotaCurso*cuotaCurso*(1-promo)), '$', 0, '.', ',')}</p>`;
             cuota.appendChild(CuotaP);
 
             TotalP.innerHTML = `
                 <h5>Total</h5>
-                <h5><b> ${"$" + pagoTotalCursoPromo*(1-promo)} </b></h5>`;
+                <h5><b> ${accounting.formatMoney((pagoTotalCursoPromo*(1-promo)), '$', 0, '.', ',')} </b></h5>`;
             total.appendChild(TotalP);
 
             column1P.innerHTML = `
-            <p class="mb-0 pb-0 pe-3">${"Cuotas: " + ncuotaCurso}</b></p>
-            <p class="mt-0 pt-0"><em>(Cantidad de cuotas totales)</em></p>`;
+            <p class="mb-0 pb-0 pe-3">${"Programa " + programa.value}</p>`;
             column1.appendChild(column1P);
         }
 
         MatriculaP.innerHTML = `
-            <h6><del>${"$" + (Matricula*2)}</del></h6>
-            <p class="ps-2">${"$" + ((Matricula)*(1-promo))}</p>`;
+            <h6><del>${accounting.formatMoney((Matricula*2), '$', 0, '.', ',')}</del></h6>
+            <p class="ps-2">${accounting.formatMoney((Matricula*(1-promo)), '$', 0, '.', ',')}</p>`;
         matricula.appendChild(MatriculaP);
 
         descFacilidadPagoP.innerHTML = `
@@ -443,7 +442,7 @@ function pagoTransferencia(){
         '<p class="text-start"><b>Cuenta de ahorros N°:</b> 91211860036</p>'+ 
         '<p class="text-start"><b>Titular N°:</b> Dorys M Lasso Yela</p>'+ 
         '<p class="text-start"><b>Cédula N°:</b> 30726466</p>' + 
-        '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>' + '<b>Total: </b>' + Total,
+        '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>' + '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','), 
     icon: 'success',
     showCancelButton: true,
     confirmButtonColor: '#6AB528',
@@ -480,7 +479,7 @@ function pagoTransferenciaDigital(){
         '<p class="text-start"> Solo falta un paso! tu cupo está reservado, para confirmarlo debes realizar tu pago antes de las próximas <b>24 horas</b>, hazlo por medio de una transferencia por la App Nequi o DaviPlata: </p>' +
         '<p class="text-start">Realiza el pago con los siguientes datos:</p>' + 
         '<p class="text-start"><b>Cuenta N°:</b> 313 744 4734</p>'+ 
-        '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>'+ '<b>Total: </b>' + Total,
+        '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>'+ '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','),
     icon: 'success',
     showCancelButton: true,
     confirmButtonColor: '#6AB528',
@@ -518,7 +517,7 @@ function pagoGiro(){
         '<p class="text-start">Realiza el pago con los siguientes datos:</p>' +
         '<p class="text-start"><b>Titular N°:</b> Dorys M Lasso Yela</p>'+ 
         '<p class="text-start"><b>Cédula N°:</b> 30726466</p>' + 
-        '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>'+ '<b>Total: </b>' + Total,
+        '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>'+ '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','),
     icon: 'success',
     showCancelButton: true,
     confirmButtonColor: '#6AB528',
@@ -539,7 +538,7 @@ function aceptoTerminos(){
     title:'Terminos y Condiciones',
     html:
         '<p class="text-start"> Con la aceptación de este beneficio educativo estoy consiente que: </p>' +
-        '<ol class="text-start"> <li>Reconozco que en caso de mi retiro voluntario no me será reintegrado el dinero que aporté hasta dicha instancia.</li> <li> Me comprometo a cumplir el manual de convivencia del instituto.</li> <li> Este formulario es único e intransferible. </li> <li> La vinculación a los programas es voluntaria e independiente a la Institución Educativa a la que pertenece. </li> <li> Con este formulario de afiliación, el estudiante podrá ingresar a los diferentes cursos y programas técnicos laborales en el departamento de Nariño donde se tenga sedes y convenios, además, en modalidad virtual desde cualquier parte del mundo. </li> <li> Al finalizar el programa, el estudiante recibirá: si es un Técnico Laboral, una Certificación de Aptitud Ocupacional; si es un Curso, una Constancia de Asistencia con intensidad horaria de 100h. </li> <li>Al finalizar el programa, el estudiante deberá hacer un pago de Derechos de Certificación, el costo varía según la fecha de culminación.</li> <li> Facilidades de pago: <ul><li>Pago a cuotas: si realizas un Técnico Laboral, podrás pagar 24 cuotas mensuales; si realizas un Curso, podrás pagar 6.75 cuotas mensales</li> <li>Un pago de la totalidad del programa con el 10% de descuento extra.</li></ul> </li> </ol>' + 
+        '<ol class="text-start"> <li>Reconozco que en caso de mi retiro voluntario no me será reintegrado el dinero que aporté hasta dicha instancia.</li> <li> Me comprometo a cumplir el manual de convivencia del instituto.</li> <li> Este formulario es único e intransferible. </li> <li> La vinculación a los programas es voluntaria e independiente a la Institución Educativa a la que pertenece. </li> <li> Con este formulario de afiliación, el estudiante podrá ingresar a los diferentes cursos y programas técnicos laborales en el departamento de Nariño donde se tenga sedes y convenios, además, en modalidad virtual desde cualquier parte del mundo. </li> <li> Al finalizar el programa, el estudiante recibirá: si es un Técnico Laboral, una Certificación de Aptitud Ocupacional; si es un Curso, una Constancia de Asistencia con intensidad horaria de 100h. </li> <li>Al finalizar el programa, el estudiante deberá hacer un pago de Derechos de Certificación, el costo varía según la fecha de culminación.</li> <li> Facilidades de pago: <ul><li>Pago a cuotas: si realizas un Técnico Laboral, podrás pagar 24 cuotas mensuales; si realizas un Curso, podrás pagar 7 cuotas mensales</li> <li>Un pago de la totalidad del programa con el 10% de descuento extra.</li></ul> </li> </ol>' + 
         '<p class="text-center"><b>INCAAS comprometido a brindar una capacitación con calidad y responsabilidad.</b></p>',
     icon: 'info',
     confirmButtonColor: '#6AB528',
@@ -570,3 +569,8 @@ emailjs.sendForm(serviceID, templateID, this)
     alert(JSON.stringify(err));
     });
 });
+
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
