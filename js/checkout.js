@@ -3,6 +3,7 @@ var Opcion2=document.getElementById("Opcion2")
 var Opcion3=document.getElementById("Opcion3")
 var modalidad = document.getElementById("Modalidad");
 var programa = document.getElementById("Programa");
+var btnInactivo = document.getElementById("btnInactivo");
 
 Opcion1.innerHTML = "";
 Opcion2.innerHTML = "";
@@ -19,6 +20,8 @@ let ncuotaTecnico=24
 let ncuotaCurso=6.75
 let promo=0.10
 
+var matricula=document.getElementById("matricula");
+ 
 function selectPrograma(){
     if(modalidad.value==="Virtual" && programa.value==="tecnico"){
         TyC.innerHTML = `
@@ -30,12 +33,13 @@ function selectPrograma(){
         Opcion1.appendChild(TyC);
         Opcion2.innerHTML = "";
         Opcion3.innerHTML = "";
+        btnInactivo.className="my-2"
         nombrePrograma.innerHTML = "";
         beneficios.innerHTML = "";
         cuota.innerHTML = "";
         matricula.innerHTML = "";
         total.innerHTML = "";
-        medioPago.innerHTML = "";
+        descFacilidadPago.innerHTML = "";
         column1.innerHTML = "";
         column2.innerHTML = "";
     } else if(modalidad.value==="Virtual" && programa.value==="curso"){
@@ -51,12 +55,13 @@ function selectPrograma(){
         Opcion1.appendChild(TyC);
         Opcion2.innerHTML = "";
         Opcion3.innerHTML = "";
+        btnInactivo.className="my-2"
         nombrePrograma.innerHTML = "";
         beneficios.innerHTML = "";
         cuota.innerHTML = "";
         matricula.innerHTML = "";
         total.innerHTML = "";
-        medioPago.innerHTML = "";
+        descFacilidadPago.innerHTML = "";
         column1.innerHTML = "";
         column2.innerHTML = "";
     } else if(modalidad.value==="Presencial" && programa.value==="tecnico"){
@@ -65,12 +70,13 @@ function selectPrograma(){
         Opcion1.appendChild(TyC);
         Opcion2.innerHTML = "";
         Opcion3.innerHTML = "";
+        btnInactivo.className="my-2"
         nombrePrograma.innerHTML = "";
         beneficios.innerHTML = "";
         cuota.innerHTML = "";
         matricula.innerHTML = "";
         total.innerHTML = "";
-        medioPago.innerHTML = "";
+        descFacilidadPago.innerHTML = "";
         column1.innerHTML = "";
         column2.innerHTML = "";
     } else if(modalidad.value==="Presencial" && programa.value==="curso"){
@@ -79,12 +85,13 @@ function selectPrograma(){
         Opcion1.appendChild(TyC);
         Opcion2.innerHTML = "";
         Opcion3.innerHTML = "";
+        btnInactivo.className="my-2"
         nombrePrograma.innerHTML = "";
         beneficios.innerHTML = "";
         cuota.innerHTML = "";
         matricula.innerHTML = "";
         total.innerHTML = "";
-        medioPago.innerHTML = "";
+        descFacilidadPago.innerHTML = "";
         column1.innerHTML = "";
         column2.innerHTML = "";
     } else{
@@ -92,12 +99,13 @@ function selectPrograma(){
         Opcion1.appendChild(TyC);
         Opcion2.innerHTML = "";
         Opcion3.innerHTML = "";
+        btnInactivo.className="my-2"
         nombrePrograma.innerHTML = "";
         beneficios.innerHTML = "";
         cuota.innerHTML = "";
         matricula.innerHTML = "";
         total.innerHTML = "";
-        medioPago.innerHTML = "";
+        descFacilidadPago.innerHTML = "";
         column1.innerHTML = "";
         column2.innerHTML = "";
     }
@@ -106,37 +114,50 @@ function selectPrograma(){
 
 function IngresoCodP(otraVez){
     if(!otraVez){
+        console.log("ahorasi")
+        // Opcion2.innerHTML = "";
         codPresencial.innerHTML = `
         <label for="codPresencial" class="form-label mt-2">Código de horario</label>
+        <p class="m-0">*Comunícate para consultar los horario y brindarte éste código <a href="https://wa.me/573216632268" target="_blanc" style="color:#6AB528; text-decoration: none; ">(click aquí)</a></p>
         <input onChange="BtnSiguiente(value)" class="codPresencial  form-control" type="text" placeholder="Ingrése código de horario" name="codPresencial" id="codPresencial" required >`;     
         Opcion2.appendChild(codPresencial);
         Opcion3.innerHTML = "";
+        btnInactivo.className="my-2"
     } else {
         codPresencial.innerHTML = `
-        <label for="codPresencial" class="form-label mt-2">Código de horario Incorrecto</label>
-        <input onChange="BtnSiguiente(value)" class="codPresencial form-control" type="text" placeholder="Ingrése código de horario correcto" name="codPresencial" id="codPresencial" required >`;     
+        <label for="codPresencial" class="form-label mt-2">Código de horario</label>
+        <p class="m-0"> <span class="text-danger"> <b> *Código incorrecto: </b> </span> comunícate para consultar los horario y brindarte éste código <a href="https://wa.me/573216632268" target="_blanc" style="color:#6AB528; text-decoration: none; ">(click aquí)</a></p>
+        <input onChange="BtnSiguiente(value)" class="codPresencial form-control " type="text" placeholder="Ingrése código de horario correcto" name="codPresencial" id="codPresencial" required >`;     
         Opcion2.appendChild(codPresencial);
         Opcion3.innerHTML = "";
+        btnInactivo.className="my-2"
     }
     
 }
 
 function BtnSiguiente(codPresencial){
     if(modalidad.value==="Virtual"){
+        btnInactivo.className="visually-hidden"
         btnSiguiente.innerHTML = `
         <div class="my-2 "> <div class="btn mBoton px-3" id="mBoton" onClick="formulario2()">Siguiente</div> </div>`;     
         Opcion3.appendChild(btnSiguiente);
     } else if(modalidad.value==="Presencial"){
-        if(codPresencial==="incaas2022"){
+        if(codPresencial==="INCAAS2022"){
+            btnInactivo.className="visually-hidden"
             btnSiguiente.innerHTML = `
             <div class="my-2 "> <div class="btn mBoton px-3" id="mBoton" onClick="formulario2()">Siguiente</div> </div>`;     
             Opcion3.appendChild(btnSiguiente);
+            Opcion2.innerHTML = `
+                <label for="codPresencial" class="form-label mt-2">Código de horario</label>
+                <input class="form-control" type="text" placeholder="INCAAS2022" disabled>`;    
         } else{
             IngresoCodP(otraVez=true)
+            btnInactivo.className="my-2"
         }
     } else{
         btnSiguiente.innerHTML = ``;     
             Opcion3.appendChild(btnSiguiente);
+        btnInactivo.className="my-2"
     }
     resumenPago()
 }
@@ -189,7 +210,7 @@ function atrasFormu2(){
 var nombrePrograma=document.getElementById("nombrePrograma");
 var beneficios=document.getElementById("beneficios");
 var cuota=document.getElementById("cuota");
-var matricula=document.getElementById("matricula");
+// var matricula=document.getElementById("matricula");
 var total=document.getElementById("total");
 
 nombrePrograma.innerHTML = "";
@@ -208,10 +229,10 @@ var MatriculaP=document.createElement('matriculaP');
 var TotalP=document.createElement('TotalP');
     TotalP.className="d-flex flex-row justify-content-between"
 
-var medioPago=document.getElementById("medioPago");
-medioPago.innerHTML = "";
-var medioPagoP=document.createElement('medioPagoP');
-    medioPagoP.className="d-flex flex-row"
+var descFacilidadPago=document.getElementById("descFacilidadPago");
+descFacilidadPago.innerHTML = "";
+var descFacilidadPagoP=document.createElement('descFacilidadPagoP');
+    // medioPagoP .className="d-flex flex-row"
 var column1=document.getElementById("column1");
 column1.innerHTML = "";
 var column1P=document.createElement('column1P');
@@ -219,12 +240,19 @@ var column2=document.getElementById("column2");
 column2.innerHTML = "";
 var column2P=document.createElement('column2P');
 
+pagoTotalTecnico= Matricula + cuotaTecnico;
+pagoTotalCurso = Matricula + cuotaCurso;
+pagoTotalTecnicoPromo= (Matricula + (ncuotaTecnico*cuotaTecnico))*(1-promo);
+pagoTotalCursoPromo = (Matricula + (ncuotaCurso*cuotaCurso))*(1-promo);
+
 
 function resumenPago(){
     if(programa.value==="tecnico"){
+        console.log("probando modulo")
+
         nombreP.innerHTML = `
             <h5 class="programa pe-3"> ${nombPograma.value} </h5> 
-            <h5><b>${"$" + (Matricula + cuotaTecnico)}</b></h5>`; 
+            <h5><b>${"$" + pagoTotalTecnico}</b></h5>`; 
         nombrePrograma.appendChild(nombreP);
 
         
@@ -235,17 +263,17 @@ function resumenPago(){
 
         TotalP.innerHTML = `
             <h5>Total</h5>
-            <h5><b> ${"$" + (Matricula + cuotaTecnico)} </b></h5>`;
+            <h5><b> ${"$" + pagoTotalTecnico} </b></h5>`;
         total.appendChild(TotalP);
 
-        medioPagoP.innerHTML = `
-        <p><b>Facilidad de pago:</b></p>
-        <p class="ps-2">${ncuotaTecnico} cuotas </p>`;
-        medioPago.appendChild(medioPagoP);
+        descFacilidadPagoP.innerHTML = `
+            <p class="m-0 p-0"><b>Facilidad de pago: </b> ${ncuotaTecnico + " cuotas mensuales" } </p>
+            <p class="m-0 p-0"><b>Beneficio Educativo: </b> 50% de descuento en totalidad del programa </p>`;
+        descFacilidadPago.appendChild(descFacilidadPagoP);
     } else if(programa.value==="curso") {
         nombreP.innerHTML = `
             <h5 class="programa pe-3"> ${nombPograma.value} </h5> 
-            <h5><b>${"$" + (Matricula + cuotaCurso)}</b></h5>`; 
+            <h5><b>${"$" + pagoTotalCurso}</b></h5>`; 
         nombrePrograma.appendChild(nombreP);
         
         CuotaP.innerHTML = `
@@ -255,13 +283,13 @@ function resumenPago(){
 
         TotalP.innerHTML = `
             <h5>Total</h5>
-            <h5><b> ${"$" + (Matricula + cuotaCurso)} </b></h5>`;
+            <h5><b> ${"$" + pagoTotalCurso} </b></h5>`;
         total.appendChild(TotalP);
 
-        medioPagoP.innerHTML = `
-        <p><b>Facilidad de pago:</b></p>
-        <p class="ps-2">${ncuotaCurso} cuotas </p>`;
-        medioPago.appendChild(medioPagoP);
+        descFacilidadPagoP.innerHTML = `
+            <p class="m-0 p-0"><b>Facilidad de pago: </b> ${ncuotaCurso + " cuotas mensuales"} </p>
+            <p class="m-0 p-0"><b>Beneficio Educativo: </b> 50% de descuento en totalidad del programa </p>`;
+        descFacilidadPago.appendChild(descFacilidadPagoP);
     }
 
     MatriculaP.innerHTML = `
@@ -288,12 +316,12 @@ function resumenPago(){
     }
 
     column1P.innerHTML = `
-        <p class="mb-0 pb-0 pe-3">Programa con <b> beneficio educativo</b></p>
+        <p class="mb-0 pb-0 pe-3">Cuotas</p>
         <p class="mt-0 pt-0"><em>(Primera cuota)</em></p>`;
     column1.appendChild(column1P);
 
     column2P.innerHTML = `
-        <p class="mb-0 pb-0 pe-3">Matrícula</p>
+        <p class="mb-0 pb-0 pe-3">Vinculación</p>
         <p class="mt-0 pt-0"><em>(Una sola vez)</em></p>`;
     column2.appendChild(column2P);
 } 
@@ -306,14 +334,14 @@ function fPago(){
         cuota.innerHTML = "";
         matricula.innerHTML = "";
         total.innerHTML = "";
-        medioPago.innerHTML = "";
+        descFacilidadPago.innerHTML = "";
         column1.innerHTML = "";
         column2.innerHTML = "";
         
         if(programa.value==="tecnico"){
             nombreP.innerHTML = `
                 <h5 class="programa pe-3"> ${nombPograma.value} </h5> 
-                <h5><b>${"$" + (Matricula + (ncuotaTecnico*cuotaTecnico))*(1-promo)}</b></h5>`; 
+                <h5><b>${"$" + pagoTotalTecnicoPromo}</b></h5>`; 
             nombrePrograma.appendChild(nombreP);
 
             CuotaP.innerHTML = `
@@ -323,17 +351,18 @@ function fPago(){
 
             TotalP.innerHTML = `
                 <h5>Total</h5>
-                <h5><b> ${"$" + (Matricula + (ncuotaTecnico*cuotaTecnico))*(1-promo)} </b></h5>`;
+                <h5><b> ${"$" + pagoTotalTecnicoPromo} </b></h5>`;
             total.appendChild(TotalP);
 
-            medioPagoP.innerHTML = `
-                <p><b>Facilidad de pago:</b></p>
-                <p class="ps-2">${ncuotaTecnico} cuotas </p>`;
-            medioPago.appendChild(medioPagoP);
+            column1P.innerHTML = `
+            <p class="mb-0 pb-0 pe-3">${ncuotaTecnico+" Cuotas"}</b></p>
+            <p class="mt-0 pt-0"><em>(Cantidad de cuotas totales)</em></p>`;
+            column1.appendChild(column1P);
+
         } else if(programa.value==="curso") {
             nombreP.innerHTML = `
                 <h5 class="programa pe-3"> ${nombPograma.value} </h5> 
-                <h5><b>${"$" + (Matricula + (ncuotaCurso*cuotaCurso))*(1-promo)}</b></h5>`; 
+                <h5><b>${"$" + pagoTotalCursoPromo}</b></h5>`; 
             nombrePrograma.appendChild(nombreP);
             
             CuotaP.innerHTML = `
@@ -343,13 +372,13 @@ function fPago(){
 
             TotalP.innerHTML = `
                 <h5>Total</h5>
-                <h5><b> ${"$" + (Matricula + (ncuotaCurso*cuotaCurso))*(1-promo)} </b></h5>`;
+                <h5><b> ${"$" + pagoTotalCursoPromo*(1-promo)} </b></h5>`;
             total.appendChild(TotalP);
 
-            medioPagoP.innerHTML = `
-                <p><b>Facilidad de pago:</b></p>
-                <p class="ps-2">${ncuotaCurso} cuotas </p>`;
-            medioPago.appendChild(medioPagoP);
+            column1P.innerHTML = `
+            <p class="mb-0 pb-0 pe-3">${ncuotaCurso +" Cuotas"}</b></p>
+            <p class="mt-0 pt-0"><em>(Cantidad de cuotas totales)</em></p>`;
+            column1.appendChild(column1P);
         }
 
         MatriculaP.innerHTML = `
@@ -357,23 +386,17 @@ function fPago(){
             <p class="ps-2">${"$" + ((Matricula)*(1-promo))}</p>`;
         matricula.appendChild(MatriculaP);
 
-        medioPagoP.innerHTML = `
-            <p><b>Facilidad de pago:</b></p>
-            <p class="ps-2">1 Pago (10% dcto extra)</p>`;
-        medioPago.appendChild(medioPagoP);
-
-        column1P.innerHTML = `
-        <p class="mb-0 pb-0 pe-3">Programa con <b> beneficio educativo</b></p>`;
-        column1.appendChild(column1P);
+        descFacilidadPagoP.innerHTML = `
+            <p class="m-0 p-0"><b>Facilidad de pago:</b> 1 Pago (10% dcto extra)</p>
+            <p class="m-0 p-0"><b>Beneficio Educativo: </b> 50% de descuento en totalidad del programa </p>`;
+        descFacilidadPago.appendChild(descFacilidadPagoP);
 
         column2P.innerHTML = `
-            <p class="mb-0 pb-0 pe-3">Matrícula</p>`;
+            <p class="mb-0 pb-0 pe-3">Vinculación</p>`;
         column2.appendChild(column2P);
     }else{
         resumenPago()
     }
-    console.log(Nombre.value, Apellido.value, ciudad.value)
-
 }
 
 var medioPago = document.getElementById('medioPago')
@@ -394,11 +417,6 @@ function pagoLinea(){
     }
     
 }
-
-pagoTotalTecnico= Matricula + cuotaTecnico;
-pagoTotalCurso = Matricula + cuotaCurso;
-pagoTotalTecnicoPromo= (Matricula + (ncuotaTecnico*cuotaTecnico))*(1-promo);
-pagoTotalCursoPromo = (Matricula + (ncuotaCurso*cuotaCurso))*(1-promo);
 
 function pagoTransferencia(){
     medioPago.value="Bancolombia"
@@ -521,7 +539,7 @@ function aceptoTerminos(){
     title:'Terminos y Condiciones',
     html:
         '<p class="text-start"> Con la aceptación de este beneficio educativo estoy consiente que: </p>' +
-        '<ol class="text-start"> <li>Reconozco que en caso de mi retiro voluntario no me será reintegrado el dinero que aporté hasta dicha instancia.</li> <li> Me comprometo a cumplir el manual de convivencia del instituto.</li> <li> Este formulario es único e intransferible. </li> <li> La vinculación a los programas es voluntaria e independiente a la Institución Educativa a la que pertenece. </li> <li> Con este formulario de afiliación, el estudiante podrá ingresar a los diferentes cursos y programas técnicos laborales en el departamento de Nariño donde se tenga sedes y convenios, además, en modalidad virtual desde cualquier parte del mundo. </li> <li> Al finalizar el programa, el estudiante recibirá: si es un Técnico Laboral, una Certificación de Aptitud Ocupacional; si es un Curso, una Constancia de Asistencia con intensidad horaria de 100h. </li> <li>Al finalizar el programa, el estudiante deberá hacer un pago de Derechos de Certificación, el costo varía según la fecha de culminación. </ol>' + 
+        '<ol class="text-start"> <li>Reconozco que en caso de mi retiro voluntario no me será reintegrado el dinero que aporté hasta dicha instancia.</li> <li> Me comprometo a cumplir el manual de convivencia del instituto.</li> <li> Este formulario es único e intransferible. </li> <li> La vinculación a los programas es voluntaria e independiente a la Institución Educativa a la que pertenece. </li> <li> Con este formulario de afiliación, el estudiante podrá ingresar a los diferentes cursos y programas técnicos laborales en el departamento de Nariño donde se tenga sedes y convenios, además, en modalidad virtual desde cualquier parte del mundo. </li> <li> Al finalizar el programa, el estudiante recibirá: si es un Técnico Laboral, una Certificación de Aptitud Ocupacional; si es un Curso, una Constancia de Asistencia con intensidad horaria de 100h. </li> <li>Al finalizar el programa, el estudiante deberá hacer un pago de Derechos de Certificación, el costo varía según la fecha de culminación.</li> <li> Facilidades de pago: <ul><li>Pago a cuotas: si realizas un Técnico Laboral, podrás pagar 24 cuotas mensuales; si realizas un Curso, podrás pagar 6.75 cuotas mensales</li> <li>Un pago de la totalidad del programa con el 10% de descuento extra.</li></ul> </li> </ol>' + 
         '<p class="text-center"><b>INCAAS comprometido a brindar una capacitación con calidad y responsabilidad.</b></p>',
     icon: 'info',
     confirmButtonColor: '#6AB528',

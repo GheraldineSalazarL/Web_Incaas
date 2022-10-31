@@ -45,7 +45,7 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="matriculas.html">Matrículas</a>
+                    <a class="nav-link" href="matriculas.html">Vinculación</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="contactos.html">Contactos</a>
@@ -72,19 +72,12 @@
                         <section class="formu col-xl-10 col-lg-10 col-md-10 col-sm-7 col-10 wow animate__animated animate__pulse" >
                             <h4 class="titulof p-1">¿Quieres que te llamemos?</h4>
                             <form id="form">
-                                <input class="controls" type="text" placeholder="Ingrésa tu Nombre" name="nombre" id="nombre" required>
-                                <input class="controls" type="text" placeholder="Ingésa tu Apellido" name="apellido" id="apellido" required>
-                                <input class="controls" type="email" placeholder="Ingrésa tu Email" name="email" id="email" required>
-                                <input class="controls" type="tel" placeholder="Ingrésa tu Teléfono" name="telefono" id="telefono" required>
-                                <label for="horario">En qué horario te llamamos?</label>
-                                <select class="controls" name="horario" id="horario" required>
-                                    <option>Selecciona el horario</option>
-                                    <option value="8-12">8:00 am a 12:00 pm</option>
-                                    <option value="2-6">2:00 pm a 6:00 pm</option>
-                                    <option value="6-9">6:00 pm a 9:00 pm</option>
-                                </select>
-                                <select class="controls" name="programa" id="programa" required>
-                                    <option>Selecciona el Programa</option>
+                                <input class="controls mt-2" type="text" placeholder="Ingrésa tu Nombre" name="nombre" id="nombre" required>
+                                <input class="controls mt-2" type="text" placeholder="Ingésa tu Apellido" name="apellido" id="apellido" required>
+                                <input class="controls mt-2" type="email" placeholder="Ingrésa tu Email (Opcional*)" name="email" id="email">
+                                <input class="controls mt-2" type="tel" placeholder="Ingrésa tu Teléfono" name="telefono" id="telefono" required>
+                                <select onchange="seminario()" class="controls mt-2" name="programa" id="programa" required>
+                                    <option>Selecciona el Programa de Interés</option>
                                     <option value="Sistemas">Técnico Laboral en Sistemas</option>
                                     <option value="As.Administrativa">Técnico Laboral en Asistencia Administrativa</option>
                                     <option value="Ingles1">Inglés 1</option>
@@ -96,9 +89,10 @@
                                     <option value="LecturaCritica">Lectura Crítica</option>
                                     <option value="RazonamientoLogico">Razonamiento Lógico y Matemático</option>
                                     <option value="PruebasSaber">Pruebas Saber</option>
-                                    <option value="Seminarios">Seminarios</option>
+                                    <option value="Seminario">Seminario</option>
                                 </select>
-                                <section class="extboton">
+                                <div id="otro" class="otro m-0 p-0">  </div>
+                                <section class="extboton mt-2">
                                     <input class="boton" type="submit" id="button" value="Si, quiero que me llamen!">
                                 </section>
                             </form>
@@ -128,7 +122,7 @@
                 <img class="mx-auto col-md-6 col-lg-6 wow animate__animated animate__pulse" src="./imag/Refuerzo.jpg" alt="Refuerzo">
                 <section class="E1B mx-auto col-md-6 col-lg-6">
                     <h2> Sé el mejor</h2> 
-                    <p>Para ser el mejor es importante que refuerces tus conocimientos y aprendas nuevos, todo el equipo de Incaas tiene por objetivo ayudarte a adquirir habilidades que elebarán tus calificiones, mejorará tu memoria, desarrollarás capacidades de resolución de problemas, desarrollarás aptitudes en un segundo idioma y hasta aumentará tu autoestima. Nuestro excelente equipo de trabajo nos hace altamente competitivos, brindando siempre la Calidad y Superación precisa para ti, que quieres buscar el más alto progreso.</p>
+                    <p>Para ser el mejor es importante que refuerces tus conocimientos y aprendas nuevos, todo el equipo de <b>INCAAS</b> tiene por objetivo ayudarte a adquirir habilidades que elebarán tus calificiones, mejorará tu memoria, desarrollarás capacidades de resolución de problemas, desarrollarás aptitudes en un segundo idioma y hasta aumentará tu autoestima. Nuestro excelente equipo de trabajo nos hace altamente competitivos, brindando siempre la Calidad y Superación precisa para ti, que quieres buscar el más alto progreso.</p>
                 </section>
             </div>
             <div class="F row flex-row-reverse mx-5">
@@ -694,7 +688,7 @@
 
         emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
-                btn.value = 'Enviar';
+                btn.value = 'Si, quiero que me llamen!';
                 form.reset();
                 Swal.fire({
                     position: 'center',
@@ -704,10 +698,23 @@
                     timer: 1500
                 })
             }, (err) => {
-            btn.value = 'Enviar';
+            btn.value = 'Si, quiero que me llamen!';
                 alert(JSON.stringify(err));
             });
         });
+
+        function seminario(){
+            var programa = document.getElementById('programa');
+            var otro = document.getElementById('otro');
+            otro.innerHTML = "";
+            var otroSem=document.createElement('otroSem');
+            if(programa.value==="Seminario"){
+                console.log(programa.value)
+                otroSem.innerHTML = `
+                    <input class="controls mt-2" type="otroSeminario" placeholder="Cuál? (área de interés)" name="otroSeminario" id="otroSeminario" > `;   
+                otro.appendChild(otroSem);
+            }
+        }
     </script>
     
 </html>
