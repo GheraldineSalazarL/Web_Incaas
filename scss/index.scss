@@ -14,18 +14,11 @@ body{
                     h1{
                         font-family: $titulos;
                         color: $blanco;
-                        // margin:auto;
 		                display:block;
                         text-align: center;
                     }
-                    img{
-                        // width: 65%;
-                        // margin:auto;
-		                // display:block;
-                    }
                 }
                 .B{
-                    // width: 100%;
                     margin: 0px 0 20px 0;
                     align-self: center;
                     .formu{
@@ -94,10 +87,6 @@ body{
             h2{
                 padding: 15px 0px 15px 0px;
             }
-            img{
-                // width: 80%;
-            }
-
         }
         .D{
             h2{
@@ -237,4 +226,8 @@ body{
         margin: 0px 20px 0px 20px !important;
     }
 }
+@media screen and (max-width: 400px){
+    .g-recaptcha {
+    transform:scale(75%);-webkit-transform:scale(75%);
+    }}
 
