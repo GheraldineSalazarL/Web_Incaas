@@ -17,9 +17,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Ubuntu:wght@700&display=swap"
             rel="stylesheet" />
-        <script src="https://kit.fontawesome.com/461bbe17d9.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/e9d32d96ee.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <title>INCAAS | Matrículas</title>
     </head>
 
@@ -29,7 +30,7 @@
                 <img src="./imag/marca.jpg" alt="INCAAS" class="img-fluid my-4 mx-5" width="30%" />
             </div>
         </header>
-        <main class="container-fluid m-0 p-0">
+        <main class="mster container-fluid m-0 p-0">
             <div class="c row m-0 p-0">
                 <div class="cInt px-5 col-md-6 col-lg-7 col-xl-8">
                     <form id="form" onkeydown="return event.key != 'Enter';">
@@ -38,22 +39,30 @@
                         
                         <label for="Modalidad" class="form-label">Modalidad</label>
                         <select onChange="selectPrograma()" class="Modalidad form-select" name="Modalidad" id="Modalidad">
-                          <option disabled selected>Seleccione la modalidad</option>
-                          <option>Presencial</option>
-                          <option>Virtual</option>
+                            <option disabled selected>Seleccione la modalidad</option>
+                            <option>Presencial</option>
+                            <option>Virtual</option>
                         </select>
                         
                         <label for="Programa" class="form-label mt-3">Programa</label>
                         <select onChange="selectPrograma()" class="Programa form-select" name="Programa" id="Programa">
-                          <option disabled selected>Seleccione el Programa</option>
-                          <option value="tecnico">Técnico Laboral</option>
-                          <option value="curso">Curso</option>
+                            <option disabled selected>Seleccione el Programa</option>
+                            <option value="tecnico">Técnico Laboral</option>
+                            <option value="curso">Curso</option>
                         </select>
                         
-                        <div class="Opcion1 my-2 " id="Opcion1">
+                        <div class="Opcion1 my-1 " id="Opcion1">
                         </div>
                         <div class="Opcion2 " id="Opcion2">
                         </div>
+
+                        <label for="facilidadPago" class="form-label mt-3">Seleccione la facilidad de pago</label>
+                        <select onChange="fPago()" class="facilidadPago form-select" name="facilidadPago" id="facilidadPago">
+                            <option value="cuotas">Cuotas</option>
+                            <option value="unPago">Pago completo - 1 cuota (10% dcto extra)</option>
+                        </select>
+                        <h6 class="mt-1" style="color: #6AB528; font-weight: bold;">Recuerda: Si pagas tu programa completo, obtienes un 10% de descuento extra</h6>
+
                         <div class="Opcion3" id="Opcion3">
                         </div>
                         
@@ -66,8 +75,8 @@
                         <h3 class="mb-3"><b> 2. Datos personales </b></h3>
                         <div class="d-flex flex-row flex-wrap col-12">
                             <div class="mb-3 pe-3 col-12 col-sm-3 col-md-6 col-lg-6 col-xl-4">
-                              <label for="Nombre" class="form-label">Nombre</label>
-                              <input type="text" class="form-control" name="Nombre" id="Nombre" required>
+                                <label for="Nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" name="Nombre" id="Nombre" required>
                             </div>
                             <div class="mb-3 pe-3 col-12 col-sm-3 col-md-6 col-lg-6 col-xl-4">
                                 <label for="Apellido" class="form-label">Apellido</label>
@@ -91,12 +100,11 @@
                             </div>
 
                             <div class="mb-3 form-check">
-                              <input type="checkbox" class="form-check-input" id="Terminos" required>
-                              <label class="form-check-label" for="Terminos">Acepto <b onClick="aceptoTerminos()" class="term" > <b> términos y condiciones </b> </b></label>
+                                <input type="checkbox" class="form-check-input" id="Terminos" required>
+                                <label class="form-check-label" for="Terminos">Acepto <b onClick="aceptoTerminos()" class="term" > <b> términos y condiciones </b> </b></label>
                             </div>
                         </div>
-                        <div id="btnSiguienteFor3">
-                           
+                        <div id="btnSiguienteFor3"> 
                         </div>
                         <div class="mBoton btn btn-primary mb-3 me-2" onClick="formulario3()">Siguiente</div>
                         <div class="btn btn-primary py-2 px-4 mb-3" onClick="atrasFormu1()" >Atrás</div>
@@ -105,49 +113,26 @@
 
                     <div class="formu3 visually-hidden" id="formu3">
                         <h3 class="mb-3"><b> 3. Pago </b></h3>
-                        <h4>Recuerda: Si pagas tu programa completo, obtienes un 10% de descuento extra</h4>
-                        <p class="pantallaChicaResumen">*Más abajo encuentras el resumen de pago</p>
-
-                        <label for="facilidadPago" class="form-label mt-3">Seleccione la facilidad de pago</label>
-                        <select onChange="fPago()" class="facilidadPago form-select" name="facilidadPago" id="facilidadPago">
-                          <option value="cuotas">Cuotas</option>
-                          <option value="unPago">Pago completo - 1 cuota (10% dcto extra)</option>
+                        <p class="pantallaChicaResumen">*Encuentras el resumen de pago más abajo</p>                   
+                        
+                        <label for="medioPago" class="form-label mt-2">Medio de Pago:</label>
+                        <select class="medioPago form-select" name="medioPago" id="medioPago">
+                            <option disabled selected value="disabled">Seleccione el medio de pago preferido</option>
+                            <option value="Online">Pago en linea (PayU - PSE)</option>
+                            <option value="Bancolombia">Transferencia o depósito (Bancolombia)</option>
+                            <option value="Nequi o Daviplata">Transferencia digital (Nequi o Daviplata)</option>
+                            <option value="Giro">Giro electrónico (Efecty, Supergiros, etc)</option>
                         </select>
 
-                        <label for="" class="form-label mt-4">Medio de pago: hacer click en el medio de pago preferido</label>
-                        <input class="visually-hidden form-select" name="medioPago" id="medioPago"></input>
-                        <div class="d-flex flex-row flex-wrap justify-content-center">
-                            <button onClick="pagoLinea()" type="submit" id="buttonEnvioForm"  class="my-2 border rounded bg-white d-flex flex-column mx-3 col-11 col-sm-5 col-md-8 col-lg-5 col-xl-4 h-100 justify-content-center">
-                                <div class="d-flex flex-row p-2 m-auto">
-                                    <img class="p-2 border-end" src="./imag/payu.png" alt="payu" height="80px">
-                                    <img class="p-2" src="./imag/pse.png" alt="pse" height="80px">
-                                </div>
-                                <h4 class="bg-info rounded-bottom m-0 py-2 text-center w-100">Pago en linea</h4>
-                                
-                            </button>
-                            <button onClick="pagoTransferencia()"  type="submit" id="buttonEnvioForm"  class="my-2 border rounded bg-white d-flex flex-column mx-3 col-11 col-sm-5 col-md-8 col-lg-5 col-xl-4 h-100 justify-content-center">
-                                <div class="d-flex flex-row p-2 m-auto ">
-                                    <img class="p-2" src="./imag/bancolombia.png" alt="bancolombia" height="80px">
-                                </div>
-                                <h4 class="bg-info rounded-bottom m-0 py-2 px-2 text-center w-100 ">Transferencia o depósito</h4>
-                            </button>
-                            <button onClick="pagoTransferenciaDigital()" type="submit" id="buttonEnvioForm" class="my-2 border rounded bg-white d-flex flex-column mx-3 col-11 col-sm-5 col-md-8 col-lg-5 col-xl-4 h-100 justify-content-center">
-                                <div class="d-flex flex-row p-2 m-auto">
-                                    <img class="p-2 border-end" src="./imag/nequi.png" alt="nequi" height="80px">
-                                    <img class="p-2 my-auto" src="./imag/daviplata.png" alt="daviplata" height="60px">
-                                </div>
-                                <h4 class="bg-info rounded-bottom m-0 py-2 px-2 text-center w-100">Transferencia digital</h4>
-                            </button>
-                            <button onClick="pagoGiro()" type="submit" id="buttonEnvioForm" class="my-2 border rounded bg-white d-flex flex-column mx-3 col-11 col-sm-5 col-md-8 col-lg-5 col-xl-4 h-100 justify-content-center">
-                                <div class="d-flex flex-row p-2 m-auto ">
-                                    <img class="p-2 my-auto" src="./imag/supergiros.png" alt="supergiros" height="50px">
-                                    <img class="p-2 border-start" src="./imag/efecty.png" alt="efecty" alt="daviplata" height="80px">
-                                </div>
-                                <h4 class="bg-info rounded-bottom m-0 py-2 px-2 text-center w-100">Giro electrónico</h4>
-                            </button>
-                            
+                        <div class="d-flex justify-content-start pt-2">
+                            <div class="g-recaptcha" data-sitekey="6Ld2RVYjAAAAAGKiO6pHb0iQuz4ttdnuibswKJZV">
+                            </div>
                         </div>
-                        <div class="btn btn-primary py-2 px-4 mb-3 align-self-end" onClick="atrasFormu2()" >Atrás</div>
+
+                        <div id="mensaje"> </div>
+
+                        <input class="mBoton btn btn-primary mt-3 mb-3 me-2"  type="submit" id="buttonEnvioForm" value="Siguiente" >
+                        <div class="btn btn-primary py-2 px-4 mb-3 mt-3 align-self-end" onClick="atrasFormu2()" >Atrás</div>                        
                     </div>
                     </form>
                     <script type="text/javascript"
