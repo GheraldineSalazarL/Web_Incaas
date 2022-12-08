@@ -115,7 +115,6 @@ function selectPrograma(){
 function IngresoCodP(otraVez){
     if(!otraVez){
         console.log("ahorasi")
-        // Opcion2.innerHTML = "";
         codPresencial.innerHTML = `
         <label for="codPresencial" class="form-label mt-2">Código de horario</label>
         <p class="m-0">*Comunícate para consultar los horario y brindarte éste código <a href="https://wa.me/573216632268" target="_blanc" style="color:#6AB528; text-decoration: none; ">(click aquí)</a></p>
@@ -126,7 +125,7 @@ function IngresoCodP(otraVez){
     } else {
         codPresencial.innerHTML = `
         <label for="codPresencial" class="form-label mt-2">Código de horario</label>
-        <p class="m-0"> <span class="text-danger"> <b> *Código incorrecto: </b> </span> comunícate para consultar los horario y brindarte éste código <a href="https://wa.me/573216632268" target="_blanc" style="color:#6AB528; text-decoration: none; ">(click aquí)</a></p>
+        <p class="m-0"> <span class="text-danger"> <b> *Código incorrecto: </b> </span> comunícate para consultar los horario y brindarte éste código <a href="https://api.whatsapp.com/send/?phone=573216632268&text=Hola%21+deseo+vincularme+a+un+programa+desde+la+p%C3%A1gina+web%2C+necesito+m%C3%A1s+informaci%C3%B3n+para+obtener+un+c%C3%B3digo+de+horario.&type=phone_number&app_absent=0" target="_blanc" style="color:#6AB528; text-decoration: none; ">(click aquí)</a></p>
         <input onChange="BtnSiguiente(value)" class="codPresencial form-control " type="text" placeholder="Ingrése código de horario correcto" name="codPresencial" id="codPresencial" required >`;     
         Opcion2.appendChild(codPresencial);
         Opcion3.innerHTML = "";
@@ -181,17 +180,42 @@ function formulario2(){
     formu2.className="formu2"
     formu3.className="formu3 visually-hidden"
 }
+
 function formulario3(){
-    console.log(Terminos.checked)
-    if(Nombre.value && Apellido.value && cedula.value && Email.value && Telefono.value && ciudad.value && Terminos.checked ){
-        formu1.className="formu1 visually-hidden" 
-        formu2.className="formu2 visually-hidden"
-        formu3.className="formu3"
-    } else{
+    if((Nombre.value.length==0 || /^\s+$/.test(Nombre.value)) || (Apellido.value.length==0 || /^\s+$/.test(Apellido.value)) || (cedula.value.length==0 || /^\s+$/.test(cedula.value)) || (Email.value.length==0 || /^\s+$/.test(Email.value)) || (Telefono.value.length==0 || /^\s+$/.test(Telefono.value)) || (ciudad.value.length==0 || /^\s+$/.test(ciudad.value)) || !Terminos.checked){
+        
         sig.innerHTML = `
             <p class="text-danger">*Completa todos los campos y acepta los términos y condiciones</p>
             `; 
         btnSiguienteFor3.appendChild(sig);
+    } else{
+        if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(Email.value)){
+            console.log("mail correcto")
+            if(cedula.value>0 && Telefono.value>0){
+                console.log("numero correcto")
+                if(/^[A-ZÁÉÍÓÚÑ, ]+$/i.test(Nombre.value) && /^[A-ZÁÉÍÓÚÑ, ]+$/i.test(Apellido.value) && /^[A-ZÁÉÍÓÚÑ, ]+$/i.test(ciudad.value)){
+                    formu1.className="formu1 visually-hidden" 
+                    formu2.className="formu2 visually-hidden"
+                    formu3.className="formu3";
+                }else {
+                    sig.innerHTML = `
+                        <p class="text-danger">*El nombre, apellido o ciudad deben contener solo texto</p>
+                    `; 
+                    btnSiguienteFor3.appendChild(sig);
+                }
+                
+            } else {
+                sig.innerHTML = `
+                    <p class="text-danger">*Ingrese un número de identificación o teléfono correcto</p>
+                `; 
+                btnSiguienteFor3.appendChild(sig);
+            }
+        } else {
+            sig.innerHTML = `
+                <p class="text-danger">*Ingrese un email correcto</p>
+            `; 
+            btnSiguienteFor3.appendChild(sig);
+        }
     }
 }
 
@@ -202,6 +226,7 @@ function atrasFormu1(){
 }
 
 function atrasFormu2(){
+    btnSiguienteFor3.innerHTML = ``; 
     formu1.className="visually-hidden formu1 d-flex flex-column col-12" 
     formu2.className="formu2"
     formu3.className="visually-hidden formu3"
@@ -210,7 +235,6 @@ function atrasFormu2(){
 var nombrePrograma=document.getElementById("nombrePrograma");
 var beneficios=document.getElementById("beneficios");
 var cuota=document.getElementById("cuota");
-// var matricula=document.getElementById("matricula");
 var total=document.getElementById("total");
 
 nombrePrograma.innerHTML = "";
@@ -232,7 +256,6 @@ var TotalP=document.createElement('TotalP');
 var descFacilidadPago=document.getElementById("descFacilidadPago");
 descFacilidadPago.innerHTML = "";
 var descFacilidadPagoP=document.createElement('descFacilidadPagoP');
-    // medioPagoP .className="d-flex flex-row"
 var column1=document.getElementById("column1");
 column1.innerHTML = "";
 var column1P=document.createElement('column1P');
@@ -372,7 +395,7 @@ function fPago(){
 
             TotalP.innerHTML = `
                 <h5>Total</h5>
-                <h5><b> ${accounting.formatMoney((pagoTotalCursoPromo*(1-promo)), '$', 0, '.', ',')} </b></h5>`;
+                <h5><b> ${accounting.formatMoney(pagoTotalCursoPromo, '$', 0, '.', ',')} </b></h5>`;
             total.appendChild(TotalP);
 
             column1P.innerHTML = `
@@ -398,141 +421,6 @@ function fPago(){
     }
 }
 
-var medioPago = document.getElementById('medioPago')
-function pagoLinea(){  
-    medioPago.value="Online"
-    if(programa.value==="tecnico"){
-        if(facilidadPago.value==="unPago"){
-            window.location = "https://biz.payulatam.com/L0d06e212DCBFB9";
-        }else if(facilidadPago.value==="cuotas"){
-            window.location = "https://biz.payulatam.com/L0d06e242DD7B16";
-        }
-    } else if(programa.value==="curso"){
-        if(facilidadPago.value==="unPago"){
-            window.location = "https://biz.payulatam.com/L0d06e22B49FDC3";
-        }else if(facilidadPago.value==="cuotas"){
-            window.location = "https://biz.payulatam.com/L0d06e205327F72";
-        }
-    }
-    
-}
-
-function pagoTransferencia(){
-    medioPago.value="Bancolombia"
-    if(programa.value==="tecnico"){
-        if(facilidadPago.value==="unPago"){
-            Total=pagoTotalTecnicoPromo;
-        }else if(facilidadPago.value==="cuotas"){
-            Total=pagoTotalTecnico;
-        }
-    } else if(programa.value==="curso"){
-        if(facilidadPago.value==="unPago"){
-            Total=pagoTotalCursoPromo;
-        }else if(facilidadPago.value==="cuotas"){
-            Total=pagoTotalCurso;
-        }
-    }
-    Swal.fire({
-    title: 'Incripción realizada',
-    // text: "Solo falta un paso!"+pagoTotalTecnico,
-    html:
-        '<p class="text-start"> Solo falta un paso! tu cupo está reservado, para confirmarlo debes realizar tu pago antes de las próximas <b>24 horas</b>, hazlo por medio de una consignación bancaria a una cuenta de ahorros de Bancolombia, tienes dos opciones: </p>' +
-        '<ul class="text-start"> <li>Consignar por medio de un corresponsal bancario de Bancolombia o transferir virtualmente, si así lo haces, no deberás pagar ningún costo adicional por la transacción.</li> <li>Consignar por medio de la sucursal física de Bancolombia, si lo haces así, debes pagar el costo adicional de la transacción, en el banco te dirán cuál es ese cobro.</li> </ul> ' +
-        '<p class="text-start">Realiza el pago con los siguientes datos:</p>' + 
-        '<p class="text-start"><b>Cuenta de ahorros N°:</b> 91211860036</p>'+ 
-        '<p class="text-start"><b>Titular N°:</b> Dorys M Lasso Yela</p>'+ 
-        '<p class="text-start"><b>Cédula N°:</b> 30726466</p>' + 
-        '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>' + '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','), 
-    icon: 'success',
-    showCancelButton: true,
-    confirmButtonColor: '#6AB528',
-    cancelButtonColor: '#083B86',
-    confirmButtonText: 'Hecho!',
-    cancelButtonText: 'Cambiar medio de pago',
-    allowOutsideClick: false,
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location = "index.html";
-        }
-    });
-}
-
-function pagoTransferenciaDigital(){
-    medioPago.value="Nequi o Daviplata"
-    if(programa.value==="tecnico"){
-        if(facilidadPago.value==="unPago"){
-            Total=pagoTotalTecnicoPromo;
-        }else if(facilidadPago.value==="cuotas"){
-            Total=pagoTotalTecnico;
-        }
-    } else if(programa.value==="curso"){
-        if(facilidadPago.value==="unPago"){
-            Total=pagoTotalCursoPromo;
-        }else if(facilidadPago.value==="cuotas"){
-            Total=pagoTotalCurso;
-        }
-    }
-    Swal.fire({
-    title: 'Incripción realizada',
-    text: "Solo falta un paso!",
-    html:
-        '<p class="text-start"> Solo falta un paso! tu cupo está reservado, para confirmarlo debes realizar tu pago antes de las próximas <b>24 horas</b>, hazlo por medio de una transferencia por la App Nequi o DaviPlata: </p>' +
-        '<p class="text-start">Realiza el pago con los siguientes datos:</p>' + 
-        '<p class="text-start"><b>Cuenta N°:</b> 313 744 4734</p>'+ 
-        '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>'+ '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','),
-    icon: 'success',
-    showCancelButton: true,
-    confirmButtonColor: '#6AB528',
-    cancelButtonColor: '#083B86',
-    confirmButtonText: 'Hecho!',
-    cancelButtonText: 'Cambiar medio de pago',
-    allowOutsideClick: false,
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location = "index.html";
-        }
-    });
-}
-
-function pagoGiro(){
-    medioPago.value="Giro"
-    if(programa.value==="tecnico"){
-        if(facilidadPago.value==="unPago"){
-            Total=pagoTotalTecnicoPromo;
-        }else if(facilidadPago.value==="cuotas"){
-            Total=pagoTotalTecnico;
-        }
-    } else if(programa.value==="curso"){
-        if(facilidadPago.value==="unPago"){
-            Total=pagoTotalCursoPromo;
-        }else if(facilidadPago.value==="cuotas"){
-            Total=pagoTotalCurso;
-        }
-    }
-    Swal.fire({
-    title: 'Incripción realizada',
-    text: "Solo falta un paso!",
-    html:
-        '<p class="text-start"> Solo falta un paso! tu cupo está reservado, para confirmarlo debes realizar tu pago antes de las próximas <b>24 horas</b>, hazlo por medio de un giro de efectivo en el punto más cercano, puede ser un Super giros, Efecty, Baloto o cualquier otro de tu elección. Recuerda que debes adicionar el costo de la transacción, la entidad te informará cuál es dicho costo </p>' +
-        '<p class="text-start">Realiza el pago con los siguientes datos:</p>' +
-        '<p class="text-start"><b>Titular N°:</b> Dorys M Lasso Yela</p>'+ 
-        '<p class="text-start"><b>Cédula N°:</b> 30726466</p>' + 
-        '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>'+ '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','),
-    icon: 'success',
-    showCancelButton: true,
-    confirmButtonColor: '#6AB528',
-    cancelButtonColor: '#083B86',
-    confirmButtonText: 'Hecho!',
-    cancelButtonText: 'Cambiar medio de pago',
-    allowOutsideClick: false,
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location = "index.html";
-        }
-    });
-}
-
-// var term = document.getElementById("term");
 function aceptoTerminos(){
     Swal.fire({
     title:'Terminos y Condiciones',
@@ -546,31 +434,167 @@ function aceptoTerminos(){
     })
 }
 
-
-
-
-const btn = document.getElementById('buttonEnvioForm');
-
-document.getElementById('form')
-.addEventListener('submit', function(event) {
-event.preventDefault();
-
-btn.value = 'Sending...';
-
-const serviceID = 'default_service';
-const templateID = 'template_u8v6l4k';
-
-emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-    // btn.value = 'Send Email';
-    // alert('Sent!');
-    }, (err) => {
-    // btn.value = 'Send Email';
-    alert(JSON.stringify(err));
-    });
-});
-
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
-  });
+});
+
+var medioPago = document.getElementById('medioPago')
+const btn = document.getElementById('buttonEnvioForm');
+const mensaje = document.getElementById('mensaje');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+    var response = grecaptcha.getResponse();
+    if (response.length == 0) {
+        mensaje.innerHTML = `<h5 class="text-danger mt-3">Por favor, confirma que no eres un robot</h5>`;
+        setTimeout(() => {
+            mensaje.innerHTML = ``;
+        }, 4000)
+    } else {
+        if (medioPago.value=== "disabled") {
+            mensaje.innerHTML = `<h5 class="text-danger mt-3">Por favor, seleccione el medio de pago.</h5>`;
+            setTimeout(() => {
+                mensaje.innerHTML = ``;
+            }, 4000)
+        } else {
+
+            btn.value = 'Enviando...';
+
+            const serviceID = 'default_service';
+            const templateID = 'template_u8v6l4k';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    if(medioPago.value==="Online"){
+                        if(programa.value==="tecnico"){
+                            if(facilidadPago.value==="unPago"){
+                                window.location = "https://biz.payulatam.com/L0d06e212DCBFB9";
+                            }else if(facilidadPago.value==="cuotas"){
+                                window.location = "https://biz.payulatam.com/L0d06e242DD7B16";
+                            }
+                        } else if(programa.value==="curso"){
+                            if(facilidadPago.value==="unPago"){
+                                window.location = "https://biz.payulatam.com/L0d06e22B49FDC3";
+                            }else if(facilidadPago.value==="cuotas"){
+                                window.location = "https://biz.payulatam.com/L0d06e205327F72";
+                            }
+                        }
+                    }
+                    else if(medioPago.value==="Bancolombia"){
+                        if(programa.value==="tecnico"){
+                            if(facilidadPago.value==="unPago"){
+                                Total=pagoTotalTecnicoPromo;
+                            }else if(facilidadPago.value==="cuotas"){
+                                Total=pagoTotalTecnico;
+                            }
+                        } else if(programa.value==="curso"){
+                            if(facilidadPago.value==="unPago"){
+                                Total=pagoTotalCursoPromo;
+                            }else if(facilidadPago.value==="cuotas"){
+                                Total=pagoTotalCurso;
+                            }
+                        }
+                        Swal.fire({
+                        title: 'Incripción realizada',
+                        html:
+                            '<p class="text-start"> Solo falta un paso! tu cupo está reservado, para confirmarlo debes realizar tu pago antes de las próximas <b>24 horas</b>, hazlo por medio de una consignación bancaria a una cuenta de ahorros de Bancolombia, tienes dos opciones: </p>' +
+                            '<ul class="text-start"> <li>Consignar por medio de un corresponsal bancario de Bancolombia o transferir virtualmente, si así lo haces, no deberás pagar ningún costo adicional por la transacción.</li> <li>Consignar por medio de la sucursal física de Bancolombia, si lo haces así, debes pagar el costo adicional de la transacción, en el banco te dirán cuál es ese cobro.</li> </ul> ' +
+                            '<p class="text-start">Realiza el pago con los siguientes datos:</p>' + 
+                            '<p class="text-start"><b>Cuenta de ahorros N°:</b> 91211860036</p>'+ 
+                            '<p class="text-start"><b>Titular N°:</b> Dorys M Lasso Yela</p>'+ 
+                            '<p class="text-start"><b>Cédula N°:</b> 30726466</p>' + 
+                            '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>' + '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','), 
+                        icon: 'success',
+                        showCancelButton: true,
+                        confirmButtonColor: '#6AB528',
+                        cancelButtonColor: '#083B86',
+                        confirmButtonText: 'Hecho!',
+                        cancelButtonText: 'Cambiar medio de pago',
+                        allowOutsideClick: false,
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location = "index.html";
+                            }
+                        });
+                    }
+                    else if(medioPago.value==="Nequi o Daviplata"){
+                        if(programa.value==="tecnico"){
+                            if(facilidadPago.value==="unPago"){
+                                Total=pagoTotalTecnicoPromo;
+                            }else if(facilidadPago.value==="cuotas"){
+                                Total=pagoTotalTecnico;
+                            }
+                        } else if(programa.value==="curso"){
+                            if(facilidadPago.value==="unPago"){
+                                Total=pagoTotalCursoPromo;
+                            }else if(facilidadPago.value==="cuotas"){
+                                Total=pagoTotalCurso;
+                            }
+                        }
+                        Swal.fire({
+                        title: 'Incripción realizada',
+                        text: "Solo falta un paso!",
+                        html:
+                            '<p class="text-start"> Solo falta un paso! tu cupo está reservado, para confirmarlo debes realizar tu pago antes de las próximas <b>24 horas</b>, hazlo por medio de una transferencia por la App Nequi o DaviPlata: </p>' +
+                            '<p class="text-start">Realiza el pago con los siguientes datos:</p>' + 
+                            '<p class="text-start"><b>Cuenta N°:</b> 313 744 4734</p>'+ 
+                            '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>'+ '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','),
+                        icon: 'success',
+                        showCancelButton: true,
+                        confirmButtonColor: '#6AB528',
+                        cancelButtonColor: '#083B86',
+                        confirmButtonText: 'Hecho!',
+                        cancelButtonText: 'Cambiar medio de pago',
+                        allowOutsideClick: false,
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location = "index.html";
+                            }
+                        });
+                    }
+                    else if(medioPago.value==="Giro"){
+                        if(programa.value==="tecnico"){
+                            if(facilidadPago.value==="unPago"){
+                                Total=pagoTotalTecnicoPromo;
+                            }else if(facilidadPago.value==="cuotas"){
+                                Total=pagoTotalTecnico;
+                            }
+                        } else if(programa.value==="curso"){
+                            if(facilidadPago.value==="unPago"){
+                                Total=pagoTotalCursoPromo;
+                            }else if(facilidadPago.value==="cuotas"){
+                                Total=pagoTotalCurso;
+                            }
+                        }
+                        Swal.fire({
+                        title: 'Incripción realizada',
+                        text: "Solo falta un paso!",
+                        html:
+                            '<p class="text-start"> Solo falta un paso! tu cupo está reservado, para confirmarlo debes realizar tu pago antes de las próximas <b>24 horas</b>, hazlo por medio de un giro de efectivo en el punto más cercano, puede ser un Super giros, Efecty, Baloto o cualquier otro de tu elección. Recuerda que debes adicionar el costo de la transacción, la entidad te informará cuál es dicho costo </p>' +
+                            '<p class="text-start">Realiza el pago con los siguientes datos:</p>' +
+                            '<p class="text-start"><b>Titular N°:</b> Dorys M Lasso Yela</p>'+ 
+                            '<p class="text-start"><b>Cédula N°:</b> 30726466</p>' + 
+                            '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>'+ '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','),
+                        icon: 'success',
+                        showCancelButton: true,
+                        confirmButtonColor: '#6AB528',
+                        cancelButtonColor: '#083B86',
+                        confirmButtonText: 'Hecho!',
+                        cancelButtonText: 'Cambiar medio de pago',
+                        allowOutsideClick: false,
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location = "index.html";
+                            }
+                        });
+                    }
+                }, (err) => {
+                    btn.value = 'Siguiente';
+                    alert(JSON.stringify(err));
+                });
+        }
+    }
+});
