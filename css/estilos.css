@@ -165,6 +165,11 @@ body .Index .H {
   .E, .F, .G {
     margin: 0px 20px 0px 20px !important; } }
 
+@media screen and (max-width: 400px) {
+  .g-recaptcha {
+    transform: scale(75%);
+    -webkit-transform: scale(75%); } }
+
 .imagenes, body .tecnicos .card .imagens, body .cursos .card .imagens, body .seminarios .card .imagens, body .tecnicos .card .imagena, body .cursos .card .imagena, body .seminarios .card .imagena, body .tecnicos .card .imagenin1, body .cursos .card .imagenin1, body .seminarios .card .imagenin1, body .tecnicos .card .imagenin2, body .cursos .card .imagenin2, body .seminarios .card .imagenin2, body .tecnicos .card .imagenp, body .cursos .card .imagenp, body .seminarios .card .imagenp, body .tecnicos .card .imagenprog, body .cursos .card .imagenprog, body .seminarios .card .imagenprog, body .tecnicos .card .imageneb, body .cursos .card .imageneb, body .seminarios .card .imageneb, body .tecnicos .card .imageneint, body .cursos .card .imageneint, body .seminarios .card .imageneint, body .tecnicos .card .imagenelc, body .cursos .card .imagenelc, body .seminarios .card .imagenelc, body .tecnicos .card .imagenrm, body .cursos .card .imagenrm, body .seminarios .card .imagenrm, body .tecnicos .card .imagenps, body .cursos .card .imagenps, body .seminarios .card .imagenps {
   border-radius: 3px;
   background-repeat: no-repeat;
@@ -310,8 +315,7 @@ body main .mBoton {
 
 body main .abstract {
   background-color: #0c1c34;
-  color: white;
-  height: 83vh; }
+  color: white; }
   body main .abstract h3, body main .abstract .programa {
     color: #6AB528; }
   body main .abstract h6 {
@@ -332,17 +336,8 @@ body main .formu3 button {
 body main .formu3 .pantallaChicaResumen {
   display: none; }
 
-@media screen and (min-width: 1327px) and (max-width: 1394px) {
-  .abstract {
-    height: 85vh !important; } }
-
-@media screen and (min-width: 768px) and (max-width: 1326px) {
-  .abstract {
-    height: 90vh !important; } }
-
 @media screen and (max-width: 768px) {
   .abstract {
-    height: 100% !important;
     padding: 40px 20px 30px 20px !important; }
   .formu3 .pantallaChicaResumen {
     display: block !important;
