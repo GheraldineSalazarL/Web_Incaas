@@ -1,0 +1,41 @@
+.notFound{
+    background-image: url(../imag/Página_no_encontrada.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left 73px ;
+    background-attachment: fixed;
+    height: 90vh;
+    background-color: $azul;
+    // color: $blanco;
+    // display: flex;
+    // justify-content: flex-start;
+    // align-items: flex-end;
+}
+
+@media screen and (min-width:995px) and (max-width:1300px){
+    .notFound{
+        height: 70vh;
+    }
+}
+@media screen and (min-width:815px) and (max-width:994px){
+    .notFound{
+        height: 60vh;
+    }
+}
+@media screen and (min-width:700px) and (max-width:814px){
+    .notFound{
+        height: 50vh;
+    }
+}
+@media screen and (min-width:580px) and (max-width:699px){
+    .notFound{
+        height: 40vh;
+    }
+}
+@media screen and (max-width:579px){
+    .notFound{
+        background-image: url(../imag/Página_no_encontrada2.gif);
+        height: 1200px;
+        background-size: cover;
+    }
+}
