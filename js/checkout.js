@@ -516,7 +516,7 @@ document.getElementById('form')
                         allowOutsideClick: false,
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                window.location = "index.html";
+                                window.location = "http://incaas.edu.co/";
                             }
                         });
                     }
@@ -551,7 +551,7 @@ document.getElementById('form')
                         allowOutsideClick: false,
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                window.location = "index.html";
+                                window.location = "http://incaas.edu.co/";
                             }
                         });
                     }
@@ -587,7 +587,7 @@ document.getElementById('form')
                         allowOutsideClick: false,
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                window.location = "index.html";
+                                window.location = "http://incaas.edu.co/";
                             }
                         });
                     }
