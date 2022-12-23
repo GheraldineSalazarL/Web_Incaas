@@ -457,7 +457,7 @@ body {
     background-image: url(../imag/init_contactos.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center right;
+    background-position: center center;
     background-attachment: fixed;
     color: #ffffff;
     display: flex;
