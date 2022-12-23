@@ -114,7 +114,6 @@ function selectPrograma(){
 
 function IngresoCodP(otraVez){
     if(!otraVez){
-        console.log("ahorasi")
         codPresencial.innerHTML = `
         <label for="codPresencial" class="form-label mt-2">Código de horario</label>
         <p class="m-0">*Comunícate para consultar los horario y brindarte éste código <a href="https://wa.me/573216632268" target="_blanc" style="color:#6AB528; text-decoration: none; ">(click aquí)</a></p>
@@ -190,9 +189,7 @@ function formulario3(){
         btnSiguienteFor3.appendChild(sig);
     } else{
         if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(Email.value)){
-            console.log("mail correcto")
             if(cedula.value>0 && Telefono.value>0){
-                console.log("numero correcto")
                 if(/^[A-ZÁÉÍÓÚÑ, ]+$/i.test(Nombre.value) && /^[A-ZÁÉÍÓÚÑ, ]+$/i.test(Apellido.value) && /^[A-ZÁÉÍÓÚÑ, ]+$/i.test(ciudad.value)){
                     formu1.className="formu1 visually-hidden" 
                     formu2.className="formu2 visually-hidden"
@@ -271,7 +268,6 @@ pagoTotalCursoPromo = (Matricula + (ncuotaCurso*cuotaCurso))*(1-promo);
 
 function resumenPago(){
     if(programa.value==="tecnico"){
-        console.log("probando modulo")
 
         nombreP.innerHTML = `
             <h5 class="programa pe-3"> ${nombPograma.value} </h5> 
