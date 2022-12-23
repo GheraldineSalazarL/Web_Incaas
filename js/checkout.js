@@ -502,7 +502,7 @@ document.getElementById('form')
                             '<p class="text-start"><b>Cuenta de ahorros N°:</b> 91211860036</p>'+ 
                             '<p class="text-start"><b>Titular N°:</b> Dorys M Lasso Yela</p>'+ 
                             '<p class="text-start"><b>Cédula N°:</b> 30726466</p>' + 
-                            '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>' + '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','), 
+                            '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: coordinacion@incaas.edu.co</b></p>' + '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','), 
                         icon: 'success',
                         showCancelButton: true,
                         confirmButtonColor: '#6AB528',
@@ -537,7 +537,7 @@ document.getElementById('form')
                             '<p class="text-start"> Solo falta un paso! tu cupo está reservado, para confirmarlo debes realizar tu pago antes de las próximas <b>24 horas</b>, hazlo por medio de una transferencia por la App Nequi o DaviPlata: </p>' +
                             '<p class="text-start">Realiza el pago con los siguientes datos:</p>' + 
                             '<p class="text-start"><b>Cuenta N°:</b> 313 744 4734</p>'+ 
-                            '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>'+ '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','),
+                            '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: coordinacion@incaas.edu.co</b></p>'+ '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','),
                         icon: 'success',
                         showCancelButton: true,
                         confirmButtonColor: '#6AB528',
@@ -573,7 +573,7 @@ document.getElementById('form')
                             '<p class="text-start">Realiza el pago con los siguientes datos:</p>' +
                             '<p class="text-start"><b>Titular N°:</b> Dorys M Lasso Yela</p>'+ 
                             '<p class="text-start"><b>Cédula N°:</b> 30726466</p>' + 
-                            '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: instituto.incaasoficial@gmail.com</b></p>'+ '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','),
+                            '<p class="text-start"> Una vez realices el pago envía una foto del comprobante al <b>WhatsApp: 321 663 2268</b> o <b>Email: coordinacion@incaas.edu.co</b></p>'+ '<b>Total: </b>' + accounting.formatMoney(Total, '$', 0, '.', ','),
                         icon: 'success',
                         showCancelButton: true,
                         confirmButtonColor: '#6AB528',
