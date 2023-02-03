@@ -14,11 +14,15 @@ body .Index .init {
     flex-wrap: nowrap;
     align-items: center;
     margin-bottom: 20px; }
-    body .Index .init .initf .A h1 {
+    body .Index .init .initf .A div {
       font-family: "Ubuntu", sans-serif;
       color: #ffffff;
-      display: block;
-      text-align: center; }
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      body .Index .init .initf .A div .tituloh1 {
+        margin-bottom: 0px;
+        text-align: center; }
   body .Index .init .initf .B {
     margin: 0px 0 20px 0;
     align-self: center; }
