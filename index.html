@@ -92,68 +92,540 @@
         </header>
 
         <main class="Index">
-                <div class="init">
-                    <div class="initf container-fluid">
-                        <div class="row pt-3 ">
-                            <div class="A  col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12 ">
-                                <div class="wow animate__animated animate__bounceInLeft col-lg-12"><h2 class="tituloh1">Comienza a estudiar ahora en</h2><h1>INCAAS</h1></div>
-                                <img class="img-fluid wow animate__animated animate__pulse m-auto col-xl-5 col-lg-7 col-md-9 col-sm-6 col-7"
-                                    src="./imag/Estudia.png" alt="Comienza a estudiar con INCAAS">
-                            </div>
-                            <div class="B col-xl-4 col-lg-5 col-md-6 col-sm-12 col-12 d-flex justify-content-start">
-                                <section
-                                    class="formu col-xl-10 col-lg-10 col-md-10 col-sm-7 col-10 wow animate__animated animate__pulse">
-                                    <h4 class="titulof p-1">¿Quieres que te llamemos?</h4>
-                                    <form id="form">
-                                        <input class="controls mt-2" type="text" placeholder="Ingresa tu Nombre" name="nombre"
-                                            id="nombre" required>
-                                        <input class="controls mt-2" type="text" placeholder="Ingresa tu Apellido"
-                                            name="apellido" id="apellido" required>
-                                        <input class="controls mt-2" type="email" placeholder="Ingresa tu Email (Opcional*)"
-                                            name="email" id="email">
-                                        <input class="controls mt-2" type="tel" placeholder="Ingresa tu Teléfono"
-                                            name="telefono" id="telefono" required>
-                                        <select onchange="seminario()" class="controls mt-2" name="programa" id="programa"
-                                            required>
-                                            <option disabled selected value="disabled">Selecciona el Programa de Interés
-                                            </option>
-                                            <option value="Sistemas">Técnico Laboral en Sistemas</option>
-                                            <option value="As.Administrativa">Técnico Laboral en Asistencia Administrativa
-                                            </option>
-                                            <option value="Ingles1">Inglés 1</option>
-                                            <option value="Ingles2">Inglés 2</option>
-                                            <option value="Portugues">Portugués</option>
-                                            <option value="Programación Niños">Programación para Niños</option>
-                                            <option value="ExcelBasico">Excel Básico</option>
-                                            <option value="ExcelIntermedio">Excel Intermedio con Énfasis en Tablas Dinámicas
-                                            </option>
-                                            <option value="LecturaCritica">Lectura Crítica</option>
-                                            <option value="RazonamientoLogico">Razonamiento Lógico y Matemático</option>
-                                            <option value="PruebasSaber">Pruebas Saber</option>
-                                            <option value="Seminario">Seminario</option>
-                                        </select>
-                                        <div id="otro" class="otro m-0 p-0"> </div>
-                                        <div class="d-flex justify-content-center pt-2">
-                                            <div class="g-recaptcha" data-sitekey="6LcnxcwiAAAAAPhazTFgiT4UmNqOW-QOPsEqmAKj">
-                                            </div>
+                
+            <div class="H row">
+                <h2>Nuestros Programas</h2>
+                <div class="carousel1">
+                    <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="tecnicos.html#tsistemas"> <img src="./imag/Tsistemas.jpg"
+                                                    alt="Técnico Laboral en Sistemas Informáticos"></a>
                                         </div>
-                                        <div id="mensaje"> </div>
-                                        <section class="extboton mt-2">
-                                            <input class="boton" type="submit" id="button" value="Si, quiero que me llamen!">
-                                        </section>
-                                    </form>
-                                    <script type="text/javascript"
-                                        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-                                    <script type="text/javascript">
-                                        emailjs.init('XPWk9mav5DBxoSlPR')
-                                    </script>
-
-                                </section>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Técnico Laboral en Sistemas Informáticos</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="tecnicos.html#tadministrativa"><img src="./imag/Tadministrativa.jpg"
+                                                    alt="Técnico Laboral en Asistencia Administrativa"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Técnico Laboral en Asistencia Administrativa</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cingles1"><img src="./imag/Cingles1.jpg"
+                                                    alt="Inglés 1"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Inglés 1</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cingles2"><img src="./imag/Cingles2.jpg"
+                                                    alt="Inglés 2"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Inglés 2</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cportugues"><img src="./imag/Cportugues.jpg"
+                                                    alt="Portugues"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Portugues</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cprogramacion"><img src="./imag/CProgramacionninos.jpg"
+                                                    alt="Programación para niños"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Programación para Niños</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cexcelbas"><img src="./imag/Cexcelb.jpg"
+                                                    alt="Excel básico"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Excel Básico</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cexcelint"><img src="./imag/Cexceli.jpg"
+                                                    alt="Excel intermedio"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Excel Intermedio con Énfasis en Tablas Dinámicas
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#clectura"><img src="./imag/Clectura.jpg"
+                                                    alt="Lectura crítica"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Lectura Crítica</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#crazonamiento"><img src="./imag/Crazonamiento.jpg"
+                                                    alt="Razonamiento lógico y matemático"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso Razonamiento Lógico y Matemático</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cpruebas"><img src="./imag/Cpruebas.jpg"
+                                                    alt="Pruebas saber"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso Pruebas Saber</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="seminarios.html"><img src="./imag/Seminarios.jpg" alt="Seminarios"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Seminarios</h5>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
 
+                <div class="carousel2">
+                    <div id="carouselExampleControls2" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="tecnicos.html#tsistemas"> <img src="./imag/Tsistemas.jpg"
+                                                    alt="Técnico Laboral en Sistemas Informáticos"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Técnico Laboral en Sistemas Informáticos</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="tecnicos.html#tadministrativa"><img src="./imag/Tadministrativa.jpg"
+                                                    alt="Técnico Laboral en Asistencia Administrativa"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Técnico Laboral en Asistencia Administrativa</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cingles1"><img src="./imag/Cingles1.jpg"
+                                                    alt="Inglés 1"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Inglés 1</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cingles2"><img src="./imag/Cingles2.jpg"
+                                                    alt="Inglés 2"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Inglés 2</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cportugues"><img src="./imag/Cportugues.jpg"
+                                                    alt="Portugues"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Portugues</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cprogramacion"><img src="./imag/CProgramacionninos.jpg"
+                                                    alt="Programación para niños"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Programación para Niños</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cexcelbas"><img src="./imag/Cexcelb.jpg"
+                                                    alt="Excel básico"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Excel Básico</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cexcelint"><img src="./imag/Cexceli.jpg"
+                                                    alt="Excel intermedio"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Excel Intermedio con Énfasis en Tablas Dinámicas
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#clectura"><img src="./imag/Clectura.jpg"
+                                                    alt="Lectura crítica"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Lectura Crítica</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#crazonamiento"><img src="./imag/Crazonamiento.jpg"
+                                                    alt="Razonamiento lógico y matemático"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso Razonamiento Lógico y Matemático</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cpruebas"><img src="./imag/Cpruebas.jpg"
+                                                    alt="Pruebas saber"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso Pruebas Saber</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="seminarios.html"><img src="./imag/Seminarios.jpg" alt="Seminarios"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Seminarios</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="carousel3">
+                    <div id="carouselExampleControls3" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="tecnicos.html#tsistemas"> <img src="./imag/Tsistemas.jpg"
+                                                    alt="Técnico Laboral en Sistemas Informáticos"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Técnico Laboral en Sistemas Informáticos</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="tecnicos.html#tadministrativa"><img src="./imag/Tadministrativa.jpg"
+                                                    alt="Técnico Laboral en Asistencia Administrativa"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Técnico Laboral en Asistencia Administrativa</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cingles1"><img src="./imag/Cingles1.jpg"
+                                                    alt="Inglés 1"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Inglés 1</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cingles2"><img src="./imag/Cingles2.jpg"
+                                                    alt="Inglés 2"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Inglés 2</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cportugues"><img src="./imag/Cportugues.jpg"
+                                                    alt="Portugues"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Portugues</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cprogramacion"><img src="./imag/CProgramacionninos.jpg"
+                                                    alt="Programación para niños"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Programación para Niños</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cexcelbas"><img src="./imag/Cexcelb.jpg"
+                                                    alt="Excel básico"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Excel Básico</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cexcelint"><img src="./imag/Cexceli.jpg"
+                                                    alt="Excel intermedio"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Excel Intermedio con Énfasis en Tablas Dinámicas
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#clectura"><img src="./imag/Clectura.jpg"
+                                                    alt="Lectura crítica"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso de Lectura Crítica</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#crazonamiento"><img src="./imag/Crazonamiento.jpg"
+                                                    alt="Razonamiento lógico y matemático"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso Razonamiento Lógico y Matemático</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="cursos.html#cpruebas"><img src="./imag/Cpruebas.jpg"
+                                                    alt="Pruebas saber"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Curso Pruebas Saber</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="cards-wrapper">
+                                    <div class="card">
+                                        <div class="image-wrapper">
+                                            <a href="seminarios.html"><img src="./imag/Seminarios.jpg" alt="Seminarios"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Seminarios</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls3"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls3"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="init">
+                <div class="initf container-fluid">
+                    <div class="row pt-3 ">
+                        <div class="A  col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12 ">
+                            <div class="wow animate__animated animate__bounceInLeft col-lg-12"><h2 class="tituloh1">Comienza a estudiar ya en</h2><h1>INCAAS</h1></div>
+                            <img class="img-fluid wow animate__animated animate__pulse m-auto col-xl-5 col-lg-7 col-md-9 col-sm-4 col-5"
+                                src="./imag/Estudia.png" alt="Comienza a estudiar con INCAAS">
+                        </div>
+                        <div class="B col-xl-4 col-lg-5 col-md-6 col-sm-12 col-12 d-flex justify-content-start">
+                            <section
+                                class="formu col-xl-10 col-lg-10 col-md-10 col-sm-7 col-10 wow animate__animated animate__pulse">
+                                <h4 class="titulof p-1">¿Quieres que te llamemos?</h4>
+                                <form id="form">
+                                    <input class="controls mt-2" type="text" placeholder="Ingresa tu Nombre" name="nombre"
+                                        id="nombre" required>
+                                    <input class="controls mt-2" type="text" placeholder="Ingresa tu Apellido"
+                                        name="apellido" id="apellido" required>
+                                    <input class="controls mt-2" type="email" placeholder="Ingresa tu Email (Opcional*)"
+                                        name="email" id="email">
+                                    <input class="controls mt-2" type="tel" placeholder="Ingresa tu Teléfono"
+                                        name="telefono" id="telefono" required>
+                                    <select onchange="seminario()" class="controls mt-2" name="programa" id="programa"
+                                        required>
+                                        <option disabled selected value="disabled">Selecciona el Programa de Interés
+                                        </option>
+                                        <option value="Sistemas">Técnico Laboral en Sistemas</option>
+                                        <option value="As.Administrativa">Técnico Laboral en Asistencia Administrativa
+                                        </option>
+                                        <option value="Ingles1">Inglés 1</option>
+                                        <option value="Ingles2">Inglés 2</option>
+                                        <option value="Portugues">Portugués</option>
+                                        <option value="Programación Niños">Programación para Niños</option>
+                                        <option value="ExcelBasico">Excel Básico</option>
+                                        <option value="ExcelIntermedio">Excel Intermedio con Énfasis en Tablas Dinámicas
+                                        </option>
+                                        <option value="LecturaCritica">Lectura Crítica</option>
+                                        <option value="RazonamientoLogico">Razonamiento Lógico y Matemático</option>
+                                        <option value="PruebasSaber">Pruebas Saber</option>
+                                        <option value="Seminario">Seminario</option>
+                                    </select>
+                                    <div id="otro" class="otro m-0 p-0"> </div>
+                                    <div class="d-flex justify-content-center pt-2">
+                                        <div class="g-recaptcha" data-sitekey="6LcnxcwiAAAAAPhazTFgiT4UmNqOW-QOPsEqmAKj">
+                                        </div>
+                                    </div>
+                                    <div id="mensaje"> </div>
+                                    <section class="extboton mt-2">
+                                        <input class="boton" type="submit" id="button" value="Si, quiero que me llamen!">
+                                    </section>
+                                </form>
+                                <script type="text/javascript"
+                                    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+                                <script type="text/javascript">
+                                    emailjs.init('XPWk9mav5DBxoSlPR')
+                                </script>
+
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
                 <div class="container-fluid">
                     <div class="C row mx-2 col-12">
                         <h2 class="col-12">Escóge la metodología que más te gusta y se adapte a tus necesidades</h2>
@@ -201,471 +673,6 @@
                                 metodología de trabajo en todo nuestro trayecto de experiencia, por eso vamos un paso adelante
                                 aplicando el saber, saber-hacer, saber-ser y saber-emprender.</p>
                         </section>
-                    </div>
-                </div>
-                <div class="H row">
-                    <h2>Nuestros Programas</h2>
-                    <div class="carousel1">
-                        <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="tecnicos.html#tsistemas"> <img src="./imag/Tsistemas.jpg"
-                                                        alt="Técnico Laboral en Sistemas Informáticos"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Técnico Laboral en Sistemas Informáticos</h5>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="tecnicos.html#tadministrativa"><img src="./imag/Tadministrativa.jpg"
-                                                        alt="Técnico Laboral en Asistencia Administrativa"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Técnico Laboral en Asistencia Administrativa</h5>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cingles1"><img src="./imag/Cingles1.jpg"
-                                                        alt="Inglés 1"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Inglés 1</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cingles2"><img src="./imag/Cingles2.jpg"
-                                                        alt="Inglés 2"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Inglés 2</h5>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cportugues"><img src="./imag/Cportugues.jpg"
-                                                        alt="Portugues"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Portugues</h5>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cprogramacion"><img src="./imag/CProgramacionninos.jpg"
-                                                        alt="Programación para niños"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Programación para Niños</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cexcelbas"><img src="./imag/Cexcelb.jpg"
-                                                        alt="Excel básico"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Excel Básico</h5>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cexcelint"><img src="./imag/Cexceli.jpg"
-                                                        alt="Excel intermedio"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Excel Intermedio con Énfasis en Tablas Dinámicas
-                                                </h5>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#clectura"><img src="./imag/Clectura.jpg"
-                                                        alt="Lectura crítica"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Lectura Crítica</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#crazonamiento"><img src="./imag/Crazonamiento.jpg"
-                                                        alt="Razonamiento lógico y matemático"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso Razonamiento Lógico y Matemático</h5>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cpruebas"><img src="./imag/Cpruebas.jpg"
-                                                        alt="Pruebas saber"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso Pruebas Saber</h5>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="seminarios.html"><img src="./imag/Seminarios.jpg" alt="Seminarios"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Seminarios</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="carousel2">
-                        <div id="carouselExampleControls2" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="tecnicos.html#tsistemas"> <img src="./imag/Tsistemas.jpg"
-                                                        alt="Técnico Laboral en Sistemas Informáticos"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Técnico Laboral en Sistemas Informáticos</h5>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="tecnicos.html#tadministrativa"><img src="./imag/Tadministrativa.jpg"
-                                                        alt="Técnico Laboral en Asistencia Administrativa"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Técnico Laboral en Asistencia Administrativa</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cingles1"><img src="./imag/Cingles1.jpg"
-                                                        alt="Inglés 1"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Inglés 1</h5>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cingles2"><img src="./imag/Cingles2.jpg"
-                                                        alt="Inglés 2"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Inglés 2</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cportugues"><img src="./imag/Cportugues.jpg"
-                                                        alt="Portugues"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Portugues</h5>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cprogramacion"><img src="./imag/CProgramacionninos.jpg"
-                                                        alt="Programación para niños"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Programación para Niños</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cexcelbas"><img src="./imag/Cexcelb.jpg"
-                                                        alt="Excel básico"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Excel Básico</h5>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cexcelint"><img src="./imag/Cexceli.jpg"
-                                                        alt="Excel intermedio"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Excel Intermedio con Énfasis en Tablas Dinámicas
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#clectura"><img src="./imag/Clectura.jpg"
-                                                        alt="Lectura crítica"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Lectura Crítica</h5>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#crazonamiento"><img src="./imag/Crazonamiento.jpg"
-                                                        alt="Razonamiento lógico y matemático"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso Razonamiento Lógico y Matemático</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cpruebas"><img src="./imag/Cpruebas.jpg"
-                                                        alt="Pruebas saber"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso Pruebas Saber</h5>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="seminarios.html"><img src="./imag/Seminarios.jpg" alt="Seminarios"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Seminarios</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="carousel3">
-                        <div id="carouselExampleControls3" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="tecnicos.html#tsistemas"> <img src="./imag/Tsistemas.jpg"
-                                                        alt="Técnico Laboral en Sistemas Informáticos"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h4 class="card-title">Técnico Laboral en Sistemas Informáticos</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="tecnicos.html#tadministrativa"><img src="./imag/Tadministrativa.jpg"
-                                                        alt="Técnico Laboral en Asistencia Administrativa"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Técnico Laboral en Asistencia Administrativa</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cingles1"><img src="./imag/Cingles1.jpg"
-                                                        alt="Inglés 1"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Inglés 1</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cingles2"><img src="./imag/Cingles2.jpg"
-                                                        alt="Inglés 2"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Inglés 2</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cportugues"><img src="./imag/Cportugues.jpg"
-                                                        alt="Portugues"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Portugues</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cprogramacion"><img src="./imag/CProgramacionninos.jpg"
-                                                        alt="Programación para niños"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Programación para Niños</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cexcelbas"><img src="./imag/Cexcelb.jpg"
-                                                        alt="Excel básico"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Excel Básico</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cexcelint"><img src="./imag/Cexceli.jpg"
-                                                        alt="Excel intermedio"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Excel Intermedio con Énfasis en Tablas Dinámicas
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#clectura"><img src="./imag/Clectura.jpg"
-                                                        alt="Lectura crítica"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso de Lectura Crítica</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#crazonamiento"><img src="./imag/Crazonamiento.jpg"
-                                                        alt="Razonamiento lógico y matemático"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso Razonamiento Lógico y Matemático</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="cursos.html#cpruebas"><img src="./imag/Cpruebas.jpg"
-                                                        alt="Pruebas saber"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Curso Pruebas Saber</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="cards-wrapper">
-                                        <div class="card">
-                                            <div class="image-wrapper">
-                                                <a href="seminarios.html"><img src="./imag/Seminarios.jpg" alt="Seminarios"></a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Seminarios</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls3"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls3"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
                     </div>
                 </div>
         </main>

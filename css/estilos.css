@@ -5,9 +5,7 @@
   box-sizing: border-box; }
 
 body .Index .init {
-  background-image: url(../imag/wave.svg);
-  background-repeat: no-repeat;
-  background-size: cover; }
+  margin-top: 50px; }
   body .Index .init .initf .A {
     display: flex;
     flex-direction: column;
@@ -16,7 +14,7 @@ body .Index .init {
     margin-bottom: 20px; }
     body .Index .init .initf .A div {
       font-family: "Ubuntu", sans-serif;
-      color: #ffffff;
+      color: #083B86;
       display: flex;
       flex-direction: column;
       align-items: center; }
@@ -84,6 +82,7 @@ body .Index .D h2 {
 
 body .Index .E, body .Index .F, body .Index .G {
   margin-top: 40px;
+  margin-bottom: 50px;
   justify-content: center;
   align-items: center; }
   body .Index .E img, body .Index .F img, body .Index .G img {
@@ -98,10 +97,13 @@ body .Index .E, body .Index .F, body .Index .G {
       padding: 15px 0px 15px 0px; }
 
 body .Index .H {
-  margin: 50px 0px 50px 0px; }
+  padding-top: 30px;
+  background-image: url(../imag/wave.svg);
+  background-repeat: no-repeat;
+  background-size: cover; }
   body .Index .H h2 {
     font-family: "Ubuntu", sans-serif;
-    color: #083B86;
+    color: #ffffff;
     padding-bottom: 20px;
     text-align: center; }
 

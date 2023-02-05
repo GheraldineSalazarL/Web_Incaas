@@ -1,9 +1,10 @@
 body{
     .Index{
         .init{
-            background-image: url(../imag/wave.svg);
-            background-repeat: no-repeat;
-            background-size: cover;
+            // background-image: url(../imag/wave.svg);
+            // background-repeat: no-repeat;
+            // background-size: cover;
+            margin-top: 50px;
             .initf{
                 .A{  
                     display: flex;
@@ -13,7 +14,7 @@ body{
                     margin-bottom: 20px;
                     div{
                         font-family: $titulos;
-                        color: $blanco;
+                        color: $azul;
                         display:flex;
                         flex-direction: column;
                         align-items: center;
@@ -103,6 +104,7 @@ body{
         }
         .E, .F, .G{
             margin-top: 40px;
+            margin-bottom: 50px;
             justify-content: center;
             align-items: center;
             img{
@@ -120,10 +122,13 @@ body{
             } 
         }
         .H{
-            margin: 50px 0px 50px 0px;
+            padding-top: 30px;
+            background-image: url(../imag/wave.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
             h2{
                 font-family: $titulos;
-                color: $azul;
+                color: $blanco;
                 padding-bottom: 20px;
                 text-align: center;
             }
